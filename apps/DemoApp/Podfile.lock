@@ -1,0 +1,25 @@
+PODS:
+  - GoogleAds-IMA-iOS-SDK (3.7.3)
+  - Mux-Stats-Core (2.0.6)
+  - Mux-Stats-THEOplayer (0.1.0)
+
+DEPENDENCIES:
+  - GoogleAds-IMA-iOS-SDK (~> 3.7)
+  - Mux-Stats-Core (~> 2.0.0)
+  - Mux-Stats-THEOplayer (~> 0.1.0)
+
+SPEC REPOS:
+  "git@github.com:ruslansokolov/TestPodSpec.git":
+    - Mux-Stats-THEOplayer
+  https://github.com/cocoapods/specs.git:
+    - GoogleAds-IMA-iOS-SDK
+    - Mux-Stats-Core
+
+SPEC CHECKSUMS:
+  GoogleAds-IMA-iOS-SDK: 6dc764910309dcc982d6eb8b7de19d3cf94a6857
+  Mux-Stats-Core: 34ff82aec4176ee6439a7767b6722af32f108539
+  Mux-Stats-THEOplayer: b312d06a7745786c84e84886fd9db3c35ff05adc
+
+PODFILE CHECKSUM: b93b0be27abd86bc3590313f75dec0b305d17cee
+
+COCOAPODS: 1.7.2
