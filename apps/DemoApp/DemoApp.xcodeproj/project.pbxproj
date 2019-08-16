@@ -152,6 +152,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -204,14 +205,12 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DemoApp/Pods-DemoApp-frameworks.sh",
-				"${PODS_ROOT}/GoogleAds-IMA-iOS-SDK/GoogleInteractiveMediaAds.framework",
 				"${PODS_ROOT}/Mux-Stats-Core/Frameworks/iOS/fat/MuxCore.framework",
-				"${PODS_ROOT}/Mux-Stats-THEOplayer/Frameworks/iOS/fat/MUXSDKStatsTHEOplayer.framework",
-				"${PODS_ROOT}/Mux-Stats-THEOplayer/Frameworks/iOS/fat/MUXSDKStatsTHEOplayer.framework.dSYM",
+				"${PODS_ROOT}/../../../Frameworks/iOS/fat/MUXSDKStatsTHEOplayer.framework",
+				"${PODS_ROOT}/../../../Frameworks/iOS/fat/MUXSDKStatsTHEOplayer.framework.dSYM",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleInteractiveMediaAds.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MuxCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MUXSDKStatsTHEOplayer.framework",
 				"${DWARF_DSYM_FOLDER_PATH}/MUXSDKStatsTHEOplayer.framework.dSYM",

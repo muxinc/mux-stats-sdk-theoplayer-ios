@@ -13,6 +13,7 @@ import THEOplayerSDK
 internal class Binding: NSObject {
     let name: String
     let software: String
+    let softwareVersion: String?
     fileprivate(set) var player: THEOplayer?
 
     fileprivate var playListener: EventListener?
@@ -29,9 +30,11 @@ internal class Binding: NSObject {
     fileprivate var adEndListener: EventListener?
     fileprivate var adErrorListener: EventListener?
 
+
     var size: CGSize = .zero
     var duration: Double = 0
     var isLive = false
+    var adIsActive = false
 
     fileprivate var adProgress: AdProgress = .started
     var ad: Ad? {
@@ -39,10 +42,13 @@ internal class Binding: NSObject {
             adProgress = .started
         }
     }
+    
+    fileprivate var forceSendAdPlaying: Bool = false
 
-    init(name: String, software: String) {
+    init(name: String, software: String, softwareVersion: String?) {
         self.name = name
         self.software = software
+        self.softwareVersion = softwareVersion
     }
 
     func attachPlayer(_ player: THEOplayer) {
@@ -64,11 +70,10 @@ internal class Binding: NSObject {
         isLive = false
     }
 
-    func dispatchEvent<Event: MUXSDKPlaybackEvent>(
-        _ type: Event.Type,
-        checkVideoData: Bool = false,
-        includeAdData: Bool = false,
-        error: String? = nil) {
+    func dispatchEvent<Event: MUXSDKPlaybackEvent>(_ type: Event.Type,
+                                                   checkVideoData: Bool = false,
+                                                   includeAdData: Bool = false,
+                                                   error: String? = nil) {
         if checkVideoData {
             self.checkVideoData()
         }
@@ -97,6 +102,9 @@ fileprivate extension Binding {
         data.playerMuxPluginName = Constants.pluginName
         data.playerMuxPluginVersion = Constants.pluginVersion
         data.playerSoftwareName = self.software
+        if (self.softwareVersion != nil) {
+            data.playerSoftwareVersion = self.softwareVersion
+        }
         data.playerLanguageCode = NSLocale.preferredLanguages.first
         data.playerWidth = player.frame.size.width * UIScreen.main.nativeScale as NSNumber
         data.playerHeight = player.frame.size.height * UIScreen.main.nativeScale as NSNumber
@@ -151,26 +159,40 @@ fileprivate extension Binding {
     func addEventListeners() {
         guard let player = player else { return }
 
-        playListener = player.addEventListener(type: PlayerEventTypes.LOAD_START) { (_: LoadStartEvent) in
-            self.dispatchEvent(MUXSDKPlayEvent.self, checkVideoData: true)
+        playListener = player.addEventListener(type: PlayerEventTypes.PLAY) { (_: PlayEvent) in
+            self.isAdActive {
+                if !$0 {
+                    self.dispatchEvent(MUXSDKPlayEvent.self, checkVideoData: true)
+                } else {
+                    self.dispatchEvent(MUXSDKAdPlayEvent.self, checkVideoData: true, includeAdData: true)
+                    if (self.forceSendAdPlaying) {
+                        self.dispatchEvent(MUXSDKAdPlayingEvent.self, checkVideoData: true, includeAdData: true)
+                        self.forceSendAdPlaying = false
+                    }
+                }
+            }
         }
         playingListener = player.addEventListener(type: PlayerEventTypes.PLAYING) { (_: PlayingEvent) in
             self.isAdActive {
                 if !$0 {
                     self.dispatchEvent(MUXSDKPlayingEvent.self, checkVideoData: true)
+                } else {
+                    self.dispatchEvent(MUXSDKAdPlayingEvent.self, checkVideoData: true, includeAdData: true)
+                    self.forceSendAdPlaying = false
                 }
             }
         }
         pauseListener = player.addEventListener(type: PlayerEventTypes.PAUSE) { (_: PauseEvent) in
             self.isAdActive {
-                if $0 {
-                    self.dispatchEvent(MUXSDKAdPauseEvent.self, checkVideoData: true, includeAdData: true)
-                } else {
+                if !$0 {
                     player.requestCurrentTime(completionHandler: { (time, _) in
                         if let time = time, let duration = player.duration, time < duration {
                             self.dispatchEvent(MUXSDKPauseEvent.self, checkVideoData: true)
                         }
                     })
+                } else {
+                    self.forceSendAdPlaying = true
+                    self.dispatchEvent(MUXSDKAdPauseEvent.self, checkVideoData: true, includeAdData: true)
                 }
             }
         }
@@ -227,7 +249,6 @@ fileprivate extension Binding {
         }
         adBeginListener = player.ads.addEventListener(type: AdsEventTypes.AD_BEGIN) { (event: AdBeginEvent) in
             self.ad = event.ad
-            self.dispatchEvent(MUXSDKAdPlayingEvent.self, includeAdData: true)
         }
         adEndListener = player.ads.addEventListener(type: AdsEventTypes.AD_END) { (_: AdEndEvent) in
             self.dispatchEvent(MUXSDKAdEndedEvent.self, includeAdData: true)
@@ -311,6 +332,7 @@ fileprivate extension Ad {
     var viewData: MUXSDKViewData {
         let view = MUXSDKViewData()
         view.viewPrerollAdId = id
+        view.viewPrerollCreativeId = id
         return view
     }
 }

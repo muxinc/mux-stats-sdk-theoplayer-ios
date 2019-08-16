@@ -37,11 +37,11 @@ class ViewController: UIViewController {
         videoData.videoId = "bigbuckbunny"
         videoData.videoSeries = "animation"
 
-        MUXSDKStatsTHEOplayer.monitorTHEOplayer(self.player, name: playerName, playerData: playerData, videoData: videoData)
+        MUXSDKStatsTHEOplayer.monitorTHEOplayer(self.player, name: playerName, playerData: playerData, videoData: videoData, softwareVersion: "1.1.1")
         self.player.play()
 
-        // After 20 seconds, we'll change the video.
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(20)) {
+        // After 90 seconds, we'll change the video.
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(90)) {
             let videoData = MUXSDKCustomerVideoData()
             videoData.videoTitle = "Apple Keynote"
             videoData.videoId = "applekeynote2010"

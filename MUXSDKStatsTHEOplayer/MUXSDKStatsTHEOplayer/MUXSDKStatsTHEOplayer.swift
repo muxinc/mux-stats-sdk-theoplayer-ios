@@ -24,16 +24,18 @@ import THEOplayerSDK
         - playerData A MUXSDKCustomerPlayerData object with player metadata
         - videoData A MUXSDKCustomerVideoData object with video metadata
      */
-    @objc public static func monitorTHEOplayer(
-        _ player: THEOplayer, name: String,
-        playerData: MUXSDKCustomerPlayerData, videoData: MUXSDKCustomerVideoData) {
+    @objc public static func monitorTHEOplayer(_ player: THEOplayer,
+                                               name: String,
+                                               playerData: MUXSDKCustomerPlayerData,
+                                               videoData: MUXSDKCustomerVideoData,
+                                               softwareVersion: String? = nil) {
         initSDK()
 
         if bindings.keys.contains(name) {
             destroyPlayer(name: name)
         }
 
-        let binding = Binding(name: name, software: Constants.software) //, delegate: delegate)
+        let binding = Binding(name: name, software: Constants.software, softwareVersion: softwareVersion) //, delegate: delegate)
         binding.attachPlayer(player)
         bindings[name] = binding
 
