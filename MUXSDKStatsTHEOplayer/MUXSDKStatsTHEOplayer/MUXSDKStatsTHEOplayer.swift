@@ -39,7 +39,10 @@ import THEOplayerSDK
         binding.attachPlayer(player)
         bindings[name] = binding
 
-        binding.dispatchEvent(MUXSDKViewInitEvent.self)
+        // This MUXSDKViewInitEvent has to be sent synchronously, or anything in
+        // the data event may be blown away by the ViewInit coming in after the DataEvent.
+        let event = MUXSDKViewInitEvent()
+        MUXSDKCore.dispatchEvent(event, forPlayer: name)
         dispatchDataEvent(playerName: name, playerData: playerData, videoData: videoData)
         binding.dispatchEvent(MUXSDKPlayerReadyEvent.self)
     }
@@ -58,20 +61,24 @@ import THEOplayerSDK
     @objc public static func videoChangeForPlayer(name: String, videoData: MUXSDKCustomerVideoData) {
         guard let player = bindings[name] else { return }
 
-        player.dispatchEvent(MUXSDKViewEndEvent.self, checkVideoData: true)
+        // These events (ViewEnd and ViewInit) need to be sent synchronously, or anything in
+        // the data event may be blown away by the ViewInit coming in after the DataEvent.
+        let viewEndEvent = MUXSDKViewEndEvent()
+        MUXSDKCore.dispatchEvent(viewEndEvent, forPlayer: name)
         player.resetVideoData()
-        player.dispatchEvent(MUXSDKViewInitEvent.self)
+        let viewInitEvent = MUXSDKViewInitEvent()
+        MUXSDKCore.dispatchEvent(viewInitEvent, forPlayer: name)
 
-        let event = MUXSDKDataEvent()
-        event.customerVideoData = videoData
-        event.videoChange = true
-        MUXSDKCore.dispatchEvent(event, forPlayer: name)
+        let dataEvent = MUXSDKDataEvent()
+        dataEvent.customerVideoData = videoData
+        dataEvent.videoChange = true
+        MUXSDKCore.dispatchEvent(dataEvent, forPlayer: name)
     }
 
     /**
      Removes any AVPlayer observers on the associated player.
 
-     When you are done with a player, call destoryPlayer(name:) to remove all observers that were set up when monitorTHEOplayer(_:, name:, playerData:, videoData:) was called and to ensure that any remaining tracking pings are sent to complete the view. If the name of the player provided was not previously initialized, no action will be taken.
+     When you are done with a player, call destroyPlayer(name:) to remove all observers that were set up when monitorTHEOplayer(_:, name:, playerData:, videoData:) was called and to ensure that any remaining tracking pings are sent to complete the view. If the name of the player provided was not previously initialized, no action will be taken.
 
      - Parameters:
          - name: The name of the player to destroy
