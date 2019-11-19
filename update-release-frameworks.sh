@@ -8,9 +8,9 @@ mkdir -p Frameworks/iOS/simulator
 cd MUXSDKStatsTHEOplayer
 
 # Build iOS release SDK
-xcodebuild -workspace 'MUXSDKStatsTHEOplayer.xcworkspace' -configuration Release archive -scheme 'MUXSDKStatsTHEOplayer' SYMROOT=$PWD/ios
+xcodebuild -workspace 'MUXSDKStatsTHEOplayer.xcworkspace' -configuration Release archive -scheme 'MUXSDKStatsTHEOplayer' -sdk iphoneos SYMROOT=$PWD/ios
 # Build iOS simulator SDK
-xcodebuild -workspace 'MUXSDKStatsTHEOplayer.xcworkspace' -configuration Release -scheme 'MUXSDKStatsTHEOplayer' -destination 'platform=iOS Simulator,name=iPhone 7' SYMROOT=$PWD/ios
+xcodebuild -workspace 'MUXSDKStatsTHEOplayer.xcworkspace' -configuration Release -scheme 'MUXSDKStatsTHEOplayer' -destination 'platform=iOS Simulator,name=iPhone 8' SYMROOT=$PWD/ios
 
 # Prepare the release .framework
 cp -R -L ios/Release-iphoneos/MUXSDKStatsTHEOplayer.framework ios/MUXSDKStatsTHEOplayer.framework
