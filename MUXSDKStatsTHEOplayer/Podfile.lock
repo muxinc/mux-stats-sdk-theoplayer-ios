@@ -5,12 +5,12 @@ DEPENDENCIES:
   - Mux-Stats-Core (~> 2.0.0)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Mux-Stats-Core
 
 SPEC CHECKSUMS:
   Mux-Stats-Core: 34ff82aec4176ee6439a7767b6722af32f108539
 
-PODFILE CHECKSUM: 4225e36628ebcd43860be66f8a811285c479432c
+PODFILE CHECKSUM: c4cb31f68df029f1033d740682b9ba933812ff7b
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.8.4
