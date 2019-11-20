@@ -7,7 +7,7 @@ DEPENDENCIES:
   - Mux-Stats-THEOplayer (from `../../`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Mux-Stats-Core
 
 EXTERNAL SOURCES:
@@ -18,6 +18,6 @@ SPEC CHECKSUMS:
   Mux-Stats-Core: 34ff82aec4176ee6439a7767b6722af32f108539
   Mux-Stats-THEOplayer: 92179abc3902e32d48959eed5abc9398212bb678
 
-PODFILE CHECKSUM: deaaed77f0ab19dc07b0b8d7b5bcbdba942a46d6
+PODFILE CHECKSUM: e2a28b045b6b6bf9195e41f46e84abcd17803ef7
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.8.4

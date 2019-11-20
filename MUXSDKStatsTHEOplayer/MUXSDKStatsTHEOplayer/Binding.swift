@@ -87,7 +87,7 @@ internal class Binding: NSObject {
         playerData { (data) in
             event.playerData = data
             if let error = error {
-                event.playerData.playerErrorMessage = error
+                event.playerData!.playerErrorMessage = error
             }
             MUXSDKCore.dispatchEvent(event, forPlayer: name)
         }
