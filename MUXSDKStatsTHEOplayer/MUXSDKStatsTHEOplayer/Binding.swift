@@ -17,6 +17,7 @@ internal class Binding: NSObject {
     fileprivate(set) var player: THEOplayer?
 
     fileprivate var playListener: EventListener?
+    fileprivate var sourceListener: EventListener?
     fileprivate var playingListener: EventListener?
     fileprivate var pauseListener: EventListener?
     fileprivate var timeListener: EventListener?
@@ -172,6 +173,18 @@ fileprivate extension Binding {
                 }
             }
         }
+
+        sourceListener = player.addEventListener(type: PlayerEventTypes.SOURCE_CHANGE) { (evt) in
+            let source = evt.source?.sources.first
+            if (source != nil) {
+                let data = MUXSDKVideoData()
+                data.videoSourceUrl = source?.src.absoluteString
+                let event = MUXSDKDataEvent()
+                event.videoData = data
+                MUXSDKCore.dispatchEvent(event, forPlayer: self.name)
+            }
+        }
+
         playingListener = player.addEventListener(type: PlayerEventTypes.PLAYING) { (_: PlayingEvent) in
             self.isAdActive {
                 if !$0 {
@@ -264,6 +277,10 @@ fileprivate extension Binding {
         if let playListener = playListener {
             player?.removeEventListener(type: PlayerEventTypes.PLAY, listener: playListener)
             self.playListener = nil
+        }
+        if let sourceListener = sourceListener {
+            player?.removeEventListener(type: PlayerEventTypes.SOURCE_CHANGE, listener: sourceListener)
+            self.sourceListener = nil
         }
         if let playingListener = playingListener {
             player?.removeEventListener(type: PlayerEventTypes.PLAYING, listener: playingListener)
