@@ -1,27 +1,16 @@
 PODS:
-  - google-cast-sdk (4.4.6):
-    - google-cast-sdk/Core (= 4.4.6)
-    - Protobuf (~> 3.0)
-  - google-cast-sdk/Core (4.4.6):
-    - Protobuf (~> 3.0)
   - Mux-Stats-Core (2.0.12)
-  - Protobuf (3.10.0)
 
 DEPENDENCIES:
-  - google-cast-sdk
   - Mux-Stats-Core (~> 2.0)
 
 SPEC REPOS:
   trunk:
-    - google-cast-sdk
     - Mux-Stats-Core
-    - Protobuf
 
 SPEC CHECKSUMS:
-  google-cast-sdk: df8b7421e35c6f9f54fc89e437d847b56d4a7885
   Mux-Stats-Core: 73e692799571459722526ff4a721b6872da5c776
-  Protobuf: a4dc852ad69c027ca2166ed287b856697814375b
 
-PODFILE CHECKSUM: 26cd5a8fa8301a295949871dcf5c07b4523aa582
+PODFILE CHECKSUM: 55c6397a1087611840a7ad301787e0c3ae31cf85
 
 COCOAPODS: 1.8.4
