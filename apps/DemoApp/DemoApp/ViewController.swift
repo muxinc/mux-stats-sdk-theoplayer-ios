@@ -41,21 +41,20 @@ class ViewController: UIViewController {
         self.player.play()
 
         // After 90 seconds, we'll change the video.
-//        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(10)) {
-////            let videoData = MUXSDKCustomerVideoData()
-////            videoData.videoTitle = "Apple Keynote"
-////            videoData.videoId = "applekeynote2010"
-////
-////            MUXSDKStatsTHEOplayer.videoChangeForPlayer(name: self.playerName, videoData: videoData)
-//
-//            let typedSource = TypedSource(
-////                src: "https://stream.mux.com/tNrV028WTqCOa02zsveBdNwouzgZTbWx5x.m3u8",
-//                  src: "https://stream.mux.com/tqe4KzdxU6GLc8oowshXgm019ibzhEX3k.m3u8",
-//                type: "application/vnd.apple.mpegurl")
-//
-//            let source = SourceDescription(source: typedSource, ads: [], textTracks: nil, poster: nil, analytics: nil, metadata: nil)
-//            self.player.source = source
-//            self.player.play()
-//        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(10)) {
+            let videoData = MUXSDKCustomerVideoData()
+            videoData.videoTitle = "Apple Keynote"
+            videoData.videoId = "applekeynote2010"
+
+            MUXSDKStatsTHEOplayer.videoChangeForPlayer(name: self.playerName, videoData: videoData)
+
+            let typedSource = TypedSource(
+                src: "https://stream.mux.com/tNrV028WTqCOa02zsveBdNwouzgZTbWx5x.m3u8",
+                type: "application/vnd.apple.mpegurl")
+
+            let source = SourceDescription(source: typedSource, ads: [], textTracks: nil, poster: nil, analytics: nil, metadata: nil)
+            self.player.source = source
+            self.player.play()
+        }
     }
 }
