@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         self.player.source = source
         
         // TODO: Add your property key!
-        let playerData = MUXSDKCustomerPlayerData(environmentKey: "YOUR_ENVIRONMENT_KEY")!
+        let playerData = MUXSDKCustomerPlayerData(environmentKey: "cqtqt2jfbq235huvso0djbn56")!
 
         let videoData = MUXSDKCustomerVideoData()
         videoData.videoTitle = "Big Buck Bunny"
@@ -41,7 +41,7 @@ class ViewController: UIViewController {
         self.player.play()
 
         // After 90 seconds, we'll change the video.
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(10)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(110)) {
             let videoData = MUXSDKCustomerVideoData()
             videoData.videoTitle = "Apple Keynote"
             videoData.videoId = "applekeynote2010"
