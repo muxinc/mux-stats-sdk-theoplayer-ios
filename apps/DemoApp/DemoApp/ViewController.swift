@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         self.player.source = source
         
         // TODO: Add your property key!
-        let playerData = MUXSDKCustomerPlayerData(environmentKey: "cqtqt2jfbq235huvso0djbn56")!
+        let playerData = MUXSDKCustomerPlayerData(environmentKey: "YOUR_ENVIRONMENT_KEY")!
 
         let videoData = MUXSDKCustomerVideoData()
         videoData.videoTitle = "Big Buck Bunny"
