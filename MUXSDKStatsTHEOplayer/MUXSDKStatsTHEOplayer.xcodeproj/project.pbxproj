@@ -327,7 +327,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2299324CA6DB1DBCB21FE15C /* Pods-MUXSDKStatsTHEOplayer.debug.xcconfig */;
 			buildSettings = {
-				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
@@ -339,7 +339,11 @@
 					"\"${PODS_ROOT}/Mux-Stats-Core/Frameworks/iOS/fat\"",
 					"\"$(SRCROOT)/../\"",
 				);
-				"GCC_PREPROCESSOR_DEFINITIONS[sdk=appletvos*]" = "DEBUG=1 $(inherited) TVOS=1";
+				"GCC_PREPROCESSOR_DEFINITIONS[sdk=appletvos*]" = (
+					"DEBUG=1",
+					"$(inherited)",
+					"TVOS=1",
+				);
 				INFOPLIST_FILE = MUXSDKStatsTHEOplayer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -359,7 +363,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A509F4458CE894269B2FC0DD /* Pods-MUXSDKStatsTHEOplayer.release.xcconfig */;
 			buildSettings = {
-				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
