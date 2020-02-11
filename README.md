@@ -1,8 +1,14 @@
-# mux-stats-sdk-avplayer
+# mux-stats-sdk-theoplayer-ios
 
-Mux integration with `THEOplayer` for iOS native applications.
+Mux integration with `THEOplayer`'s native SDK for iOS native applications.
 
 This integration is built on top of [Mux's core Objective-C library](https://github.com/muxinc/stats-sdk-objc), allowing thinner wrappers for each new player.
+
+Note: this integration requires THEOplayer 2.61.0 or newer.
+
+## Quickstart
+* While we work on publishing this via cocoapods, you can reference this repository as a development pod after you clone this repo
+* The built frameworks are available in the `Frameworks` directory if you do not want to build your own version
 
 ## Prerequisites
 * Place `THEOplayerSDK.framework` in the root folder

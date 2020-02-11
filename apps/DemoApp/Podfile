@@ -1,7 +1,5 @@
 platform :ios, '11.0'
 
 target 'DemoApp' do
-  pod 'Mux-Stats-Core', '~>2.0.0'
-  pod 'Mux-Stats-THEOplayer', '~>0.1.0'
-  pod 'GoogleAds-IMA-iOS-SDK', '~> 3.7'
+  pod 'Mux-Stats-THEOplayer', :path => '../../'
 end
