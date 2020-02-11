@@ -17,6 +17,7 @@ internal class Binding: NSObject {
     fileprivate(set) var player: THEOplayer?
 
     fileprivate var playListener: EventListener?
+    fileprivate var sourceListener: EventListener?
     fileprivate var playingListener: EventListener?
     fileprivate var pauseListener: EventListener?
     fileprivate var timeListener: EventListener?
@@ -29,9 +30,11 @@ internal class Binding: NSObject {
     fileprivate var adBeginListener: EventListener?
     fileprivate var adEndListener: EventListener?
     fileprivate var adErrorListener: EventListener?
+    fileprivate var presentationChangeListener: EventListener?
 
 
     var size: CGSize = .zero
+    var lastTrackedSize: CGSize?
     var duration: Double = 0
     var isLive = false
     var adIsActive = false
@@ -87,7 +90,7 @@ internal class Binding: NSObject {
         playerData { (data) in
             event.playerData = data
             if let error = error {
-                event.playerData.playerErrorMessage = error
+                event.playerData!.playerErrorMessage = error
             }
             MUXSDKCore.dispatchEvent(event, forPlayer: name)
         }
@@ -120,40 +123,56 @@ fileprivate extension Binding {
         guard let player = player else { return }
         var updated = false
 
+        let duration = (player.duration ?? 0) * 1000 // convert seconds to ms
+        if !self.duration.isEqual(to: duration) {
+            self.duration = duration
+            updated = true
+        }
+        if !self.duration.isFinite && player.readyState != .HAVE_NOTHING && !self.isLive {
+            self.isLive = true
+            updated = true
+        }
+        let haveValidSizeValue = !self.size.equalTo(.zero)
+        let sizeHasChanged = self.lastTrackedSize != nil && !self.size.equalTo(self.lastTrackedSize!)
+
+        if ((haveValidSizeValue && self.lastTrackedSize == nil) || sizeHasChanged) {
+            updated = true
+        }
+        if updated {
+            let data = MUXSDKVideoData()
+            if haveValidSizeValue {
+                self.lastTrackedSize = self.size
+                data.videoSourceWidth = NSNumber(value: Double(self.size.width))
+                data.videoSourceHeight = NSNumber(value: Double(self.size.height))
+            }
+            if self.duration > 0 {
+                data.videoSourceDuration = NSNumber(value: Double(self.duration))
+            }
+            if self.isLive {
+                data.videoSourceIsLive = self.isLive ? "true" : "false"
+            }
+            let event = MUXSDKDataEvent()
+            event.videoData = data
+            MUXSDKCore.dispatchEvent(event, forPlayer: self.name)
+        }
+    }
+
+    func setSizeDimensions () {
+        guard let player = player else { return }
         player.requestVideoWidth { (width, _) in
             player.requestVideoHeight { (height, _) in
                 let size = CGSize(width: width ?? 0, height: height ?? 0)
                 if !self.size.equalTo(size) {
                     self.size = size
-                    updated = true
-                }
-                let duration = player.duration ?? 0
-                if !self.duration.isEqual(to: duration) {
-                    self.duration = duration
-                    updated = true
-                }
-                if !self.duration.isFinite && player.readyState != .HAVE_NOTHING && !self.isLive {
-                    self.isLive = true
-                    updated = true
-                }
-                if updated {
-                    let data = MUXSDKVideoData()
-                    if !size.equalTo(.zero) {
-                        data.videoSourceWidth = NSNumber(value: Double(size.width))
-                        data.videoSourceHeight = NSNumber(value: Double(size.height))
-                    }
-                    if self.duration > 0 {
-                        data.videoSourceDuration = NSNumber(value: Double(self.duration))
-                    }
-                    if self.isLive {
-                        data.videoSourceIsLive = self.isLive ? "true" : "false"
-                    }
-                    let event = MUXSDKDataEvent()
-                    event.videoData = data
-                    MUXSDKCore.dispatchEvent(event, forPlayer: self.name)
                 }
             }
         }
+    }
+
+    func dispatchVideoData (videoData: MUXSDKVideoData) {
+        let event = MUXSDKDataEvent()
+        event.videoData = videoData
+        MUXSDKCore.dispatchEvent(event, forPlayer: self.name)
     }
 
     func addEventListeners() {
@@ -172,8 +191,21 @@ fileprivate extension Binding {
                 }
             }
         }
+
+        sourceListener = player.addEventListener(type: PlayerEventTypes.SOURCE_CHANGE) { (evt) in
+            let source = evt.source?.sources.first
+            if (source != nil) {
+                let data = MUXSDKVideoData()
+                data.videoSourceUrl = source?.src.absoluteString
+                let event = MUXSDKDataEvent()
+                event.videoData = data
+                MUXSDKCore.dispatchEvent(event, forPlayer: self.name)
+            }
+        }
+
         playingListener = player.addEventListener(type: PlayerEventTypes.PLAYING) { (_: PlayingEvent) in
             self.isAdActive {
+                self.setSizeDimensions()
                 if !$0 {
                     self.dispatchEvent(MUXSDKPlayingEvent.self, checkVideoData: true)
                 } else {
@@ -196,33 +228,32 @@ fileprivate extension Binding {
                 }
             }
         }
-        timeListener = player.addEventListener(type: PlayerEventTypes.TIME_UPDATE) { (_: TimeUpdateEvent) in
+        timeListener = player.addEventListener(type: PlayerEventTypes.TIME_UPDATE) { (evt: TimeUpdateEvent) in
             self.isAdActive { adActive in
-                player.requestCurrentTime { (time, _) in
-                    if let time = time, let duration = player.duration {
-                        if adActive {
-                            if time >= duration * 0.25 {
-                                if self.adProgress < .firstQuartile {
-                                    self.dispatchEvent(MUXSDKAdFirstQuartileEvent.self, includeAdData: true)
-                                    self.adProgress = .firstQuartile
-                                }
+                let time = evt.currentTime
+                if let duration = player.duration {
+                    if adActive {
+                        if time >= duration * 0.25 {
+                            if self.adProgress < .firstQuartile {
+                                self.dispatchEvent(MUXSDKAdFirstQuartileEvent.self, includeAdData: true)
+                                self.adProgress = .firstQuartile
                             }
-                            if time >= duration * 0.5 {
-                                if self.adProgress < .midpoint {
-                                    self.dispatchEvent(MUXSDKAdMidpointEvent.self, includeAdData: true)
-                                    self.adProgress = .midpoint
-                                }
+                        }
+                        if time >= duration * 0.5 {
+                            if self.adProgress < .midpoint {
+                                self.dispatchEvent(MUXSDKAdMidpointEvent.self, includeAdData: true)
+                                self.adProgress = .midpoint
                             }
-                            if time >= duration * 0.75 {
-                                if self.adProgress < .thirdQuartile {
-                                    self.dispatchEvent(MUXSDKAdThirdQuartileEvent.self, includeAdData: true)
-                                    self.adProgress = .thirdQuartile
-                                }
+                        }
+                        if time >= duration * 0.75 {
+                            if self.adProgress < .thirdQuartile {
+                                self.dispatchEvent(MUXSDKAdThirdQuartileEvent.self, includeAdData: true)
+                                self.adProgress = .thirdQuartile
                             }
-                        } else {
-                            if time > 0, time < duration {
-                                self.dispatchEvent(MUXSDKTimeUpdateEvent.self, checkVideoData: true)
-                            }
+                        }
+                    } else {
+                        if time > 0, time < duration {
+                            self.dispatchEvent(MUXSDKTimeUpdateEvent.self, checkVideoData: true)
                         }
                     }
                 }
@@ -239,6 +270,10 @@ fileprivate extension Binding {
         }
         completeListener = player.addEventListener(type: PlayerEventTypes.ENDED) { (_: EndedEvent) in
             self.dispatchEvent(MUXSDKViewEndEvent.self, checkVideoData: true)
+        }
+        presentationChangeListener = player.addEventListener(type: PlayerEventTypes.PRESENTATION_MODE_CHANGE) { (_: PresentationModeChangeEvent) in
+            self.setSizeDimensions()
+            self.dispatchEvent(MUXSDKTimeUpdateEvent.self, checkVideoData: true)
         }
         adBreakBeginListener = player.ads.addEventListener(type: AdsEventTypes.AD_BREAK_BEGIN) { (_: AdBreakBeginEvent) in
             self.dispatchEvent(MUXSDKAdBreakStartEvent.self, includeAdData: true)
@@ -264,6 +299,10 @@ fileprivate extension Binding {
         if let playListener = playListener {
             player?.removeEventListener(type: PlayerEventTypes.PLAY, listener: playListener)
             self.playListener = nil
+        }
+        if let sourceListener = sourceListener {
+            player?.removeEventListener(type: PlayerEventTypes.SOURCE_CHANGE, listener: sourceListener)
+            self.sourceListener = nil
         }
         if let playingListener = playingListener {
             player?.removeEventListener(type: PlayerEventTypes.PLAYING, listener: playingListener)
@@ -292,6 +331,10 @@ fileprivate extension Binding {
         if let completeListener = completeListener {
             player?.removeEventListener(type: PlayerEventTypes.ENDED, listener: completeListener)
             self.completeListener = nil
+        }
+        if let presentationChangeListener = presentationChangeListener {
+            player?.removeEventListener(type: PlayerEventTypes.PRESENTATION_MODE_CHANGE, listener: presentationChangeListener)
+            self.presentationChangeListener = nil
         }
         if let adBreakBeginListener = adBreakBeginListener {
             player?.removeEventListener(type: AdsEventTypes.AD_BREAK_BEGIN, listener: adBreakBeginListener)

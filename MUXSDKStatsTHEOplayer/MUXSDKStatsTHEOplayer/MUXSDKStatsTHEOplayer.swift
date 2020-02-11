@@ -10,7 +10,7 @@ import Foundation
 import MuxCore
 import THEOplayerSDK
 
-@objc public class MUXSDKStatsTHEOplayer: NSObject {
+public class MUXSDKStatsTHEOplayer: NSObject {
     static var bindings: [String: Binding] = [:]
 
     /**
@@ -24,7 +24,7 @@ import THEOplayerSDK
         - playerData A MUXSDKCustomerPlayerData object with player metadata
         - videoData A MUXSDKCustomerVideoData object with video metadata
      */
-    @objc public static func monitorTHEOplayer(_ player: THEOplayer,
+    public static func monitorTHEOplayer(_ player: THEOplayer,
                                                name: String,
                                                playerData: MUXSDKCustomerPlayerData,
                                                videoData: MUXSDKCustomerVideoData,
@@ -58,7 +58,7 @@ import THEOplayerSDK
          - playerData A MUXSDKCustomerPlayerData object with player metadata
          - videoData A MUXSDKCustomerVideoData object with video metadata
      */
-    @objc public static func videoChangeForPlayer(name: String, videoData: MUXSDKCustomerVideoData) {
+    public static func videoChangeForPlayer(name: String, videoData: MUXSDKCustomerVideoData) {
         guard let player = bindings[name] else { return }
 
         // These events (ViewEnd and ViewInit) need to be sent synchronously, or anything in
@@ -83,7 +83,7 @@ import THEOplayerSDK
      - Parameters:
          - name: The name of the player to destroy
      */
-    @objc public static func destroyPlayer(name: String) {
+    public static func destroyPlayer(name: String) {
         if let binding = bindings.removeValue(forKey: name) {
             binding.detachPlayer()
         }
