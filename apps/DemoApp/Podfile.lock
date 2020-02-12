@@ -4,20 +4,17 @@ PODS:
     - Mux-Stats-Core (~> 2.1)
 
 DEPENDENCIES:
-  - Mux-Stats-THEOplayer (from `../../`)
+  - Mux-Stats-THEOplayer
 
 SPEC REPOS:
   trunk:
     - Mux-Stats-Core
-
-EXTERNAL SOURCES:
-  Mux-Stats-THEOplayer:
-    :path: "../../"
+    - Mux-Stats-THEOplayer
 
 SPEC CHECKSUMS:
   Mux-Stats-Core: 133a6590c4d093b68364ffa238b28a6874aab37d
   Mux-Stats-THEOplayer: 1098f387c3328b714c4d93517c7e7b8e114dded3
 
-PODFILE CHECKSUM: 9522809f326396fd1e153699842ef34952b554bd
+PODFILE CHECKSUM: 5b03e21ab0495ed2237abbb1208ee0bb6bc1d83a
 
 COCOAPODS: 1.8.4
