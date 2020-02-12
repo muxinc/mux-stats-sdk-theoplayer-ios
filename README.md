@@ -4,14 +4,23 @@ Mux integration with `THEOplayer`'s native SDK for iOS native applications.
 
 This integration is built on top of [Mux's core Objective-C library](https://github.com/muxinc/stats-sdk-objc), allowing thinner wrappers for each new player.
 
-Note: this integration requires THEOplayer 2.61.0 or newer.
+Note: this integration requires THEOplayer 2.67.0 or newer.
 
-## Quickstart
-* While we work on publishing this via cocoapods, you can reference this repository as a development pod after you clone this repo
-* The built frameworks are available in the `Frameworks` directory if you do not want to build your own version
+View [the guide on mux.com](https://docs.mux.com/docs/theoplayer-sdk-for-ios)
 
-## Prerequisites
-* Place `THEOplayerSDK.framework` in the root folder
+## Installation
+
+Add this to your Podfile:
+
+```
+pod 'Mux-Stats-THEOplayer', '~> 0.1'
+```
+
+Then run `pod install`.
+
+## Development
+
+* Place `THEOplayerSDK.framework` (>= 2.67.0) in the root folder
 
 ## How to release
 * Bump versions in MUXSDKStatsTHEOplayer.info, and Mux-Stats-THEOplayer.podspec
@@ -21,7 +30,5 @@ Note: this integration requires THEOplayer 2.61.0 or newer.
 * Github - Make a new release with the new version
 * Cocoapod - Run `pod spec lint` to local check pod validity
 * Cocoapod - Run `pod trunk push Mux-Stats-THEOplayer.podspec`
-
-* To support Carthage framework management,
 * After the `update-release-frameworks.sh` build, run carthage-archive.sh.
 * Then attach the output to the release

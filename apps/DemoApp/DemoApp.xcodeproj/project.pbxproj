@@ -11,7 +11,7 @@
 		2B37659322E5117F009F4891 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B37659222E5117F009F4891 /* AppDelegate.swift */; };
 		2B37659E22E5144F009F4891 /* THEOplayerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B37659922E5143C009F4891 /* THEOplayerSDK.framework */; };
 		2B37659F22E5144F009F4891 /* THEOplayerSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2B37659922E5143C009F4891 /* THEOplayerSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		85EE6832569FE3999EE24A06 /* libPods-DemoApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF1827A33F03EF0BF43551F /* libPods-DemoApp.a */; };
+		7F4DEBF41E879E86B48105C8 /* Pods_DemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 030FCDFCC15B69307624A494 /* Pods_DemoApp.framework */; };
 		F444D4461DDB8EBF00FE804F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F444D4441DDB8EBF00FE804F /* Main.storyboard */; };
 		F444D4481DDB8EBF00FE804F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F444D4471DDB8EBF00FE804F /* Assets.xcassets */; };
 		F444D44B1DDB8EBF00FE804F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F444D4491DDB8EBF00FE804F /* LaunchScreen.storyboard */; };
@@ -32,11 +32,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		030FCDFCC15B69307624A494 /* Pods_DemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		080264B79652414FDB74D750 /* Pods-DemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoApp.release.xcconfig"; path = "Target Support Files/Pods-DemoApp/Pods-DemoApp.release.xcconfig"; sourceTree = "<group>"; };
 		2B37659022E5114D009F4891 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2B37659222E5117F009F4891 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B37659922E5143C009F4891 /* THEOplayerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = THEOplayerSDK.framework; path = ../../THEOplayerSDK.framework; sourceTree = "<group>"; };
-		4DF1827A33F03EF0BF43551F /* libPods-DemoApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DemoApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9A0D9309AB7051EB1CB6C77 /* Pods-DemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoApp.debug.xcconfig"; path = "Target Support Files/Pods-DemoApp/Pods-DemoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F444D4381DDB8EBF00FE804F /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F444D4451DDB8EBF00FE804F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -51,7 +51,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B37659E22E5144F009F4891 /* THEOplayerSDK.framework in Frameworks */,
-				85EE6832569FE3999EE24A06 /* libPods-DemoApp.a in Frameworks */,
+				7F4DEBF41E879E86B48105C8 /* Pods_DemoApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,7 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				2B37659922E5143C009F4891 /* THEOplayerSDK.framework */,
-				4DF1827A33F03EF0BF43551F /* libPods-DemoApp.a */,
+				030FCDFCC15B69307624A494 /* Pods_DemoApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -210,8 +210,8 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DemoApp/Pods-DemoApp-frameworks.sh",
 				"${PODS_ROOT}/Mux-Stats-Core/Frameworks/iOS/fat/MuxCore.framework",
-				"${PODS_ROOT}/../../../Frameworks/iOS/fat/MUXSDKStatsTHEOplayer.framework",
-				"${PODS_ROOT}/../../../Frameworks/iOS/fat/MUXSDKStatsTHEOplayer.framework.dSYM",
+				"${PODS_ROOT}/Mux-Stats-THEOplayer/Frameworks/iOS/fat/MUXSDKStatsTHEOplayer.framework",
+				"${PODS_ROOT}/Mux-Stats-THEOplayer/Frameworks/iOS/fat/MUXSDKStatsTHEOplayer.framework.dSYM",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
