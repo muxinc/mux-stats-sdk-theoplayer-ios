@@ -45,7 +45,6 @@
 				935AA133E8C340C2F15186E5 /* Pods-MUXSDKStatsTHEOplayer.debug.xcconfig */,
 				96A98610D34639D4999F1074 /* Pods-MUXSDKStatsTHEOplayer.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -345,6 +344,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 0.2.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mux.stats.ios.MUXSDKStatsTHEOplayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -377,6 +377,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 0.2.0;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mux.stats.ios.MUXSDKStatsTHEOplayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
