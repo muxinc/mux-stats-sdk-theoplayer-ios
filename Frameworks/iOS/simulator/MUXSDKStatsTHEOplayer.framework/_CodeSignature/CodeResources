@@ -6,43 +6,35 @@
 	<dict>
 		<key>Headers/MUXSDKStatsTHEOplayer-Swift.h</key>
 		<data>
-		sawHgLXJgHA8i1w53lerGiVNeYE=
+		PbP723IDEG6mQTizDJYeECxn0hs=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		b2zKVen8hwCxgSjl4pKeoo/219Q=
-		</data>
-		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
-		<data>
-		Q254+M3uoxYpLP5iriNSNsdoQLU=
-		</data>
-		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/Project/x86_64.swiftsourceinfo</key>
-		<data>
-		Q254+M3uoxYpLP5iriNSNsdoQLU=
+		Wp2KkHtFJ1Kz6vAooCByYpJc1Xw=
 		</data>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		HbfjyacDBfLXb0g/X8WI0E0rIGo=
+		PCN2QDCHfWnJ5CWkZJSq2BTl7Zw=
 		</data>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		YWAsVADA3YDDeYTeQaAI50HwzgA=
+		h/Nu3x5rZaMW8D2FaocieyVoZo4=
 		</data>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		rTxh6jdn9X9c+IduJEwMIUkGekA=
+		nnWIidcWO9uCFEt+ipqvs1peStY=
 		</data>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		HbfjyacDBfLXb0g/X8WI0E0rIGo=
+		PCN2QDCHfWnJ5CWkZJSq2BTl7Zw=
 		</data>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		YWAsVADA3YDDeYTeQaAI50HwzgA=
+		h/Nu3x5rZaMW8D2FaocieyVoZo4=
 		</data>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		rTxh6jdn9X9c+IduJEwMIUkGekA=
+		nnWIidcWO9uCFEt+ipqvs1peStY=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -55,63 +47,49 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			RktuPbjBcAMKO1pIuxShHo18LnLYnFx12yH59JuZD4Y=
-			</data>
-		</dict>
-		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			29djwAjkTaoyH+fPKnq7GsrfFWarmLGE1Ftif4tr4KA=
-			</data>
-		</dict>
-		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/Project/x86_64.swiftsourceinfo</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			29djwAjkTaoyH+fPKnq7GsrfFWarmLGE1Ftif4tr4KA=
+			X5cQW35J9q2uPo3LjRI9Yngjnik9W92B0160lvPt8k0=
 			</data>
 		</dict>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			7HkwjL7qtjgEa4vngBtFJgsKLod8YDr5hAICSLWjzc8=
+			ttP/0mMyls1h3Aeh8ehg71U7T20pa/L4Xu/lkqVdbpQ=
 			</data>
 		</dict>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dKrt0cs5eAyBSKWAjpn5ikNHZNyCErOvIYLExYXF0RA=
+			m5iVGxVLdnhIytERN5p4YoiD4VkrmBKC79Vg408dplU=
 			</data>
 		</dict>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			o87DJdwnmtkJjih2ff7CROIR1nmZM9gDcAHbMB9lXEg=
+			/2DolWVX1YRyO3NLCQMXjLO94dHfQaMtVc0FCIrDtZw=
 			</data>
 		</dict>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			7HkwjL7qtjgEa4vngBtFJgsKLod8YDr5hAICSLWjzc8=
+			ttP/0mMyls1h3Aeh8ehg71U7T20pa/L4Xu/lkqVdbpQ=
 			</data>
 		</dict>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/x86_64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dKrt0cs5eAyBSKWAjpn5ikNHZNyCErOvIYLExYXF0RA=
+			m5iVGxVLdnhIytERN5p4YoiD4VkrmBKC79Vg408dplU=
 			</data>
 		</dict>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			o87DJdwnmtkJjih2ff7CROIR1nmZM9gDcAHbMB9lXEg=
+			/2DolWVX1YRyO3NLCQMXjLO94dHfQaMtVc0FCIrDtZw=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

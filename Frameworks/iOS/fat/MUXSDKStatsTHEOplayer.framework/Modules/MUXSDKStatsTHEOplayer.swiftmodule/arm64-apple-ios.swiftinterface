@@ -1,15 +1,14 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)
+// swift-compiler-version: Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)
 // swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name MUXSDKStatsTHEOplayer
 import Foundation
 import MuxCore
 import Swift
 import THEOplayerSDK
-@objc @_inheritsConvenienceInitializers public class MUXSDKStatsTHEOplayer : ObjectiveC.NSObject {
-  public static func monitorTHEOplayer(_ player: THEOplayerSDK.THEOplayer, name: Swift.String, playerData: MuxCore.MUXSDKCustomerPlayerData, videoData: MuxCore.MUXSDKCustomerVideoData, softwareVersion: Swift.String? = nil, automaticErrorTracking: Swift.Bool = true)
+@objc public class MUXSDKStatsTHEOplayer : ObjectiveC.NSObject {
+  public static func monitorTHEOplayer(_ player: THEOplayerSDK.THEOplayer, name: Swift.String, playerData: MuxCore.MUXSDKCustomerPlayerData, videoData: MuxCore.MUXSDKCustomerVideoData, softwareVersion: Swift.String? = nil)
   public static func videoChangeForPlayer(name: Swift.String, videoData: MuxCore.MUXSDKCustomerVideoData)
   public static func destroyPlayer(name: Swift.String)
-  public static func dispatchError(name: Swift.String, code: Swift.String, message: Swift.String)
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
