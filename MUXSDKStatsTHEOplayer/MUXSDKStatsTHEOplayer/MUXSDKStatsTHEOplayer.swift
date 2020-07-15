@@ -23,19 +23,22 @@ public class MUXSDKStatsTHEOplayer: NSObject {
         - name: A name for this instance of the player
         - playerData A MUXSDKCustomerPlayerData object with player metadata
         - videoData A MUXSDKCustomerVideoData object with video metadata
+        - softwareVersion Optional string to specify the software version metadata
+        - automaticErrorTracking Boolean that will enable or disable automatic error tracking. If you use this you will need to use theMUXSDKStatsTHEOplayer  dispatchError method to track fatal errors manually. (default is true)
      */
     public static func monitorTHEOplayer(_ player: THEOplayer,
                                                name: String,
                                                playerData: MUXSDKCustomerPlayerData,
                                                videoData: MUXSDKCustomerVideoData,
-                                               softwareVersion: String? = nil) {
+                                               softwareVersion: String? = nil,
+                                               automaticErrorTracking: Bool = true) {
         initSDK()
 
         if bindings.keys.contains(name) {
             destroyPlayer(name: name)
         }
 
-        let binding = Binding(name: name, software: Constants.software, softwareVersion: softwareVersion) //, delegate: delegate)
+        let binding = Binding(name: name, software: Constants.software, softwareVersion: softwareVersion, automaticErrorTracking: automaticErrorTracking) //, delegate: delegate)
         binding.attachPlayer(player)
         bindings[name] = binding
 
@@ -87,6 +90,19 @@ public class MUXSDKStatsTHEOplayer: NSObject {
         if let binding = bindings.removeValue(forKey: name) {
             binding.detachPlayer()
         }
+    }
+
+    /**
+     Sends a custom error to the underlying Mux Data monitor
+
+     - Parameters:
+         - name: The name of the player to destroy
+         - code: The error code in string format
+         - message: The error message in string format
+     */
+    public static func dispatchError(name: String, code: String, message: String) {
+        guard let binding = bindings[name] else { return }
+        binding.dispatchError(code: code, message: message)
     }
 }
 

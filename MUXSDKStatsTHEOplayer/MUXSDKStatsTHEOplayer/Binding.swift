@@ -14,6 +14,7 @@ internal class Binding: NSObject {
     let name: String
     let software: String
     let softwareVersion: String?
+    let automaticErrorTracking: Bool
     fileprivate(set) var player: THEOplayer?
 
     fileprivate var playListener: EventListener?
@@ -48,10 +49,11 @@ internal class Binding: NSObject {
     
     fileprivate var forceSendAdPlaying: Bool = false
 
-    init(name: String, software: String, softwareVersion: String?) {
+    init(name: String, software: String, softwareVersion: String?, automaticErrorTracking: Bool) {
         self.name = name
         self.software = software
         self.softwareVersion = softwareVersion
+        self.automaticErrorTracking = automaticErrorTracking
     }
 
     func attachPlayer(_ player: THEOplayer) {
@@ -77,6 +79,7 @@ internal class Binding: NSObject {
                                                    checkVideoData: Bool = false,
                                                    includeAdData: Bool = false,
                                                    error: String? = nil) {
+//        print("debug dispatchEvent test \(type) \(String(describing: self.ad?.viewData))")
         if checkVideoData {
             self.checkVideoData()
         }
@@ -92,6 +95,33 @@ internal class Binding: NSObject {
             if let error = error {
                 event.playerData!.playerErrorMessage = error
             }
+            // careful here, we only want to disable MUXSDKErrorEvent
+            // ad errors should still be triggered (MUXSDKAdErrorEvent)
+            if (type == MUXSDKErrorEvent.self) {
+                if (self.automaticErrorTracking) {
+                    print("debug - doing error tracking because \(self.automaticErrorTracking)")
+                    MUXSDKCore.dispatchEvent(event, forPlayer: name)
+                } else {
+                    print("debug - skipping error tracking because \(self.automaticErrorTracking)")
+                }
+            } else {
+                MUXSDKCore.dispatchEvent(event, forPlayer: name)
+            }
+        }
+    }
+
+    // This method intentionally bypasses `automaticErrorTracking` setting
+    // This method is meant to be used when a developer wants to manually dispatch
+    // an error. Most commonly used when `automaticErrorTracking` has been explicitly
+    // set to false
+    func dispatchError(code: String, message: String) {
+        let event = MUXSDKErrorEvent()
+        let name = self.name
+
+        playerData { (data) in
+            event.playerData = data
+            event.playerData!.playerErrorCode = code
+            event.playerData!.playerErrorMessage = message
             MUXSDKCore.dispatchEvent(event, forPlayer: name)
         }
     }
@@ -179,6 +209,7 @@ fileprivate extension Binding {
         guard let player = player else { return }
 
         playListener = player.addEventListener(type: PlayerEventTypes.PLAY) { (_: PlayEvent) in
+            print("debug PlayerEventTypes.PLAY")
             self.isAdActive {
                 if !$0 {
                     self.dispatchEvent(MUXSDKPlayEvent.self, checkVideoData: true)
@@ -193,6 +224,7 @@ fileprivate extension Binding {
         }
 
         sourceListener = player.addEventListener(type: PlayerEventTypes.SOURCE_CHANGE) { (evt) in
+            print("debug PlayerEventTypes.SOURCE_CHANGE")
             let source = evt.source?.sources.first
             if (source != nil) {
                 let data = MUXSDKVideoData()
@@ -204,6 +236,7 @@ fileprivate extension Binding {
         }
 
         playingListener = player.addEventListener(type: PlayerEventTypes.PLAYING) { (_: PlayingEvent) in
+            print("debug PlayerEventTypes.PLAYING")
             self.isAdActive {
                 self.setSizeDimensions()
                 if !$0 {
@@ -215,6 +248,7 @@ fileprivate extension Binding {
             }
         }
         pauseListener = player.addEventListener(type: PlayerEventTypes.PAUSE) { (_: PauseEvent) in
+            print("debug PlayerEventTypes.PAUSE")
             self.isAdActive {
                 if !$0 {
                     player.requestCurrentTime(completionHandler: { (time, _) in
@@ -229,9 +263,12 @@ fileprivate extension Binding {
             }
         }
         timeListener = player.addEventListener(type: PlayerEventTypes.TIME_UPDATE) { (evt: TimeUpdateEvent) in
+            print("debug PlayerEventTypes.TIME_UPDATE")
             self.isAdActive { adActive in
+                print("debug TIME_UPDATE 1 \(adActive)")
                 let time = evt.currentTime
                 if let duration = player.duration {
+                    print("debug TIME_UPDATE 2 \(adActive) 25:\(time >= duration * 0.25) 50:\(time >= duration * 0.5) 75:\(time >= duration * 0.75)")
                     if adActive {
                         if time >= duration * 0.25 {
                             if self.adProgress < .firstQuartile {
@@ -260,36 +297,46 @@ fileprivate extension Binding {
             }
         }
         seekListener = player.addEventListener(type: PlayerEventTypes.SEEKING) { (_: SeekingEvent) in
+            print("debug PlayerEventTypes.SEEKING")
             self.dispatchEvent(MUXSDKInternalSeekingEvent.self)
         }
         seekedListener = player.addEventListener(type: PlayerEventTypes.SEEKED) { (_: SeekedEvent) in
+            print("debug PlayerEventTypes.SEEKED")
             self.dispatchEvent(MUXSDKSeekedEvent.self)
         }
         errorListener = player.addEventListener(type: PlayerEventTypes.ERROR) { (event: ErrorEvent) in
+            print("debug PlayerEventTypes.ERROR")
             self.dispatchEvent(MUXSDKErrorEvent.self, checkVideoData: true, error: event.error)
         }
         completeListener = player.addEventListener(type: PlayerEventTypes.ENDED) { (_: EndedEvent) in
+            print("debug PlayerEventTypes.ENDED")
             self.dispatchEvent(MUXSDKViewEndEvent.self, checkVideoData: true)
         }
         presentationChangeListener = player.addEventListener(type: PlayerEventTypes.PRESENTATION_MODE_CHANGE) { (_: PresentationModeChangeEvent) in
+            print("debug PlayerEventTypes.PRESENTATION_MODE_CHANGE")
             self.setSizeDimensions()
             self.dispatchEvent(MUXSDKTimeUpdateEvent.self, checkVideoData: true)
         }
         adBreakBeginListener = player.ads.addEventListener(type: AdsEventTypes.AD_BREAK_BEGIN) { (_: AdBreakBeginEvent) in
+            print("debug AdsEventTypes.AD_BREAK_BEGIN")
             self.dispatchEvent(MUXSDKAdBreakStartEvent.self, includeAdData: true)
         }
         adBreakEndListener = player.ads.addEventListener(type: AdsEventTypes.AD_BREAK_END) { (_: AdBreakEndEvent) in
+            print("debug AdsEventTypes.AD_BREAK_END")
             self.dispatchEvent(MUXSDKAdBreakEndEvent.self, includeAdData: true)
             self.ad = nil
         }
         adBeginListener = player.ads.addEventListener(type: AdsEventTypes.AD_BEGIN) { (event: AdBeginEvent) in
+            print("debug AdsEventTypes.AD_BEGIN")
             self.ad = event.ad
         }
         adEndListener = player.ads.addEventListener(type: AdsEventTypes.AD_END) { (_: AdEndEvent) in
+            print("debug AdsEventTypes.AD_END")
             self.dispatchEvent(MUXSDKAdEndedEvent.self, includeAdData: true)
             self.ad = nil
         }
         adErrorListener = player.ads.addEventListener(type: AdsEventTypes.AD_ERROR) { (event: AdErrorEvent) in
+            print("debug AdsEventTypes.AD_ERROR")
             self.dispatchEvent(MUXSDKAdErrorEvent.self, error: event.error)
             self.ad = nil
         }
@@ -359,7 +406,19 @@ fileprivate extension Binding {
     }
 
     func isAdActive(completion: @escaping (_ isActive: Bool) -> ()) {
-        player?.ads.requestCurrentAdBreak { (ads, _) in completion(ads != nil) }
+        print("debug isAdActive \(player == nil) \(player?.ads == nil) \(String(describing: player?.ads))")
+//            completion(true)
+        print("debug requestCurrentAdBreak call 1")
+//        player?.ads
+        player?.ads.requestCurrentAdBreak { (ads, _) in
+            print("debug requestCurrentAdBreak resp 1 \(String(describing: ads))")
+            completion(ads != nil)
+        }
+        print("debug requestCurrentAdBreak call 2")
+        player?.ads.requestCurrentAdBreak { (ads, _) in
+            print("debug requestCurrentAdBreak resp 2 \(String(describing: ads))")
+            completion(ads != nil)
+        }
     }
 }
 

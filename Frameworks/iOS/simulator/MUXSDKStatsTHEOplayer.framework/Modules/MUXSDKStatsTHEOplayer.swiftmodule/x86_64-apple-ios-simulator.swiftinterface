@@ -6,9 +6,10 @@ import MuxCore
 import Swift
 import THEOplayerSDK
 @objc @_inheritsConvenienceInitializers public class MUXSDKStatsTHEOplayer : ObjectiveC.NSObject {
-  public static func monitorTHEOplayer(_ player: THEOplayerSDK.THEOplayer, name: Swift.String, playerData: MuxCore.MUXSDKCustomerPlayerData, videoData: MuxCore.MUXSDKCustomerVideoData, softwareVersion: Swift.String? = nil)
+  public static func monitorTHEOplayer(_ player: THEOplayerSDK.THEOplayer, name: Swift.String, playerData: MuxCore.MUXSDKCustomerPlayerData, videoData: MuxCore.MUXSDKCustomerVideoData, softwareVersion: Swift.String? = nil, automaticErrorTracking: Swift.Bool = true)
   public static func videoChangeForPlayer(name: Swift.String, videoData: MuxCore.MUXSDKCustomerVideoData)
   public static func destroyPlayer(name: Swift.String)
+  public static func dispatchError(name: Swift.String, code: Swift.String, message: Swift.String)
   @objc deinit
   @objc override dynamic public init()
 }
