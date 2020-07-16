@@ -11,23 +11,19 @@
 		2B90072622DEC8D10069EECA /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B90071D22DEC1010069EECA /* Binding.swift */; };
 		2B90072722DEC8E20069EECA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B90071C22DEC1000069EECA /* Constants.swift */; };
 		2B90072822DEC8E80069EECA /* MUXSDKStatsTHEOplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B90071E22DEC1010069EECA /* MUXSDKStatsTHEOplayer.swift */; };
-		A050578AE771DC84CAD841A8 /* libPods-MUXSDKStatsTHEOplayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C2DE9EC01086696D87331C /* libPods-MUXSDKStatsTHEOplayer.a */; };
+		C36FACF766EC4DE6751F6AE4 /* libPods-MUXSDKStatsTHEOplayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87F00FC86FC3C53F3A4DE466 /* libPods-MUXSDKStatsTHEOplayer.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2299324CA6DB1DBCB21FE15C /* Pods-MUXSDKStatsTHEOplayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUXSDKStatsTHEOplayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MUXSDKStatsTHEOplayer/Pods-MUXSDKStatsTHEOplayer.debug.xcconfig"; sourceTree = "<group>"; };
 		2B90071C22DEC1000069EECA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2B90071D22DEC1010069EECA /* Binding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 		2B90071E22DEC1010069EECA /* MUXSDKStatsTHEOplayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUXSDKStatsTHEOplayer.swift; sourceTree = "<group>"; };
 		2B90072422DEC5C10069EECA /* THEOplayerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = THEOplayerSDK.framework; path = ../THEOplayerSDK.framework; sourceTree = "<group>"; };
-		71E9DFE516F6970D05769B4E /* Pods-MUXSDKStatsTHEOplayerTv.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUXSDKStatsTHEOplayerTv.release.xcconfig"; path = "Pods/Target Support Files/Pods-MUXSDKStatsTHEOplayerTv/Pods-MUXSDKStatsTHEOplayerTv.release.xcconfig"; sourceTree = "<group>"; };
-		7FEF662BE45E805333B7371A /* Pods-MUXSDKStatsTHEOplayerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUXSDKStatsTHEOplayerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MUXSDKStatsTHEOplayerTests/Pods-MUXSDKStatsTHEOplayerTests.debug.xcconfig"; sourceTree = "<group>"; };
-		A509F4458CE894269B2FC0DD /* Pods-MUXSDKStatsTHEOplayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUXSDKStatsTHEOplayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-MUXSDKStatsTHEOplayer/Pods-MUXSDKStatsTHEOplayer.release.xcconfig"; sourceTree = "<group>"; };
-		BCC5D86A3714D5DBC5D8ED1B /* Pods-MUXSDKStatsTHEOplayerTv.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUXSDKStatsTHEOplayerTv.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MUXSDKStatsTHEOplayerTv/Pods-MUXSDKStatsTHEOplayerTv.debug.xcconfig"; sourceTree = "<group>"; };
-		D55847390AE2D6C375E7535C /* Pods-MUXSDKStatsTHEOplayerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUXSDKStatsTHEOplayerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MUXSDKStatsTHEOplayerTests/Pods-MUXSDKStatsTHEOplayerTests.release.xcconfig"; sourceTree = "<group>"; };
+		87F00FC86FC3C53F3A4DE466 /* libPods-MUXSDKStatsTHEOplayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MUXSDKStatsTHEOplayer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		935AA133E8C340C2F15186E5 /* Pods-MUXSDKStatsTHEOplayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUXSDKStatsTHEOplayer.debug.xcconfig"; path = "Target Support Files/Pods-MUXSDKStatsTHEOplayer/Pods-MUXSDKStatsTHEOplayer.debug.xcconfig"; sourceTree = "<group>"; };
+		96A98610D34639D4999F1074 /* Pods-MUXSDKStatsTHEOplayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUXSDKStatsTHEOplayer.release.xcconfig"; path = "Target Support Files/Pods-MUXSDKStatsTHEOplayer/Pods-MUXSDKStatsTHEOplayer.release.xcconfig"; sourceTree = "<group>"; };
 		F4DCACFD1DCA892E0094D94C /* MUXSDKStatsTHEOplayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MUXSDKStatsTHEOplayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4DCAD011DCA892E0094D94C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F8C2DE9EC01086696D87331C /* libPods-MUXSDKStatsTHEOplayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MUXSDKStatsTHEOplayer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,18 +32,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B90072522DEC5C10069EECA /* THEOplayerSDK.framework in Frameworks */,
-				A050578AE771DC84CAD841A8 /* libPods-MUXSDKStatsTHEOplayer.a in Frameworks */,
+				C36FACF766EC4DE6751F6AE4 /* libPods-MUXSDKStatsTHEOplayer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F530847BD41E314ABEE3341 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				935AA133E8C340C2F15186E5 /* Pods-MUXSDKStatsTHEOplayer.debug.xcconfig */,
+				96A98610D34639D4999F1074 /* Pods-MUXSDKStatsTHEOplayer.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		6808FFDC7DFF60E4CC0995AB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				2B90072422DEC5C10069EECA /* THEOplayerSDK.framework */,
-				F8C2DE9EC01086696D87331C /* libPods-MUXSDKStatsTHEOplayer.a */,
+				87F00FC86FC3C53F3A4DE466 /* libPods-MUXSDKStatsTHEOplayer.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -57,8 +62,8 @@
 			children = (
 				F4DCACFF1DCA892E0094D94C /* MUXSDKStatsTHEOplayer */,
 				F4DCACFE1DCA892E0094D94C /* Products */,
-				FBE8B3D58A0B1FEB7D8DE084 /* Pods */,
 				6808FFDC7DFF60E4CC0995AB /* Frameworks */,
+				5F530847BD41E314ABEE3341 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,19 +86,6 @@
 			path = MUXSDKStatsTHEOplayer;
 			sourceTree = "<group>";
 		};
-		FBE8B3D58A0B1FEB7D8DE084 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				2299324CA6DB1DBCB21FE15C /* Pods-MUXSDKStatsTHEOplayer.debug.xcconfig */,
-				A509F4458CE894269B2FC0DD /* Pods-MUXSDKStatsTHEOplayer.release.xcconfig */,
-				7FEF662BE45E805333B7371A /* Pods-MUXSDKStatsTHEOplayerTests.debug.xcconfig */,
-				D55847390AE2D6C375E7535C /* Pods-MUXSDKStatsTHEOplayerTests.release.xcconfig */,
-				BCC5D86A3714D5DBC5D8ED1B /* Pods-MUXSDKStatsTHEOplayerTv.debug.xcconfig */,
-				71E9DFE516F6970D05769B4E /* Pods-MUXSDKStatsTHEOplayerTv.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -111,7 +103,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F4DCAD111DCA892E0094D94C /* Build configuration list for PBXNativeTarget "MUXSDKStatsTHEOplayer" */;
 			buildPhases = (
-				88D717D93A19A0C03BB1B363 /* [CP] Check Pods Manifest.lock */,
+				EF1AE5589D5608EDB24492E8 /* [CP] Check Pods Manifest.lock */,
 				F4DCACF81DCA892E0094D94C /* Sources */,
 				F4DCACF91DCA892E0094D94C /* Frameworks */,
 				F4DCACFA1DCA892E0094D94C /* Headers */,
@@ -171,16 +163,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		88D717D93A19A0C03BB1B363 /* [CP] Check Pods Manifest.lock */ = {
+		EF1AE5589D5608EDB24492E8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-MUXSDKStatsTHEOplayer-checkManifestLockResult.txt",
 			);
@@ -325,7 +321,7 @@
 		};
 		F4DCAD121DCA892E0094D94C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2299324CA6DB1DBCB21FE15C /* Pods-MUXSDKStatsTHEOplayer.debug.xcconfig */;
+			baseConfigurationReference = 935AA133E8C340C2F15186E5 /* Pods-MUXSDKStatsTHEOplayer.debug.xcconfig */;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -348,6 +344,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 0.2.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mux.stats.ios.MUXSDKStatsTHEOplayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -361,7 +358,7 @@
 		};
 		F4DCAD131DCA892E0094D94C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A509F4458CE894269B2FC0DD /* Pods-MUXSDKStatsTHEOplayer.release.xcconfig */;
+			baseConfigurationReference = 96A98610D34639D4999F1074 /* Pods-MUXSDKStatsTHEOplayer.release.xcconfig */;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -380,6 +377,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 0.2.0;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mux.stats.ios.MUXSDKStatsTHEOplayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -20,7 +20,6 @@ rm $TARGET_IOS_BINARY
 
 # Make the iOS fat binary
 lipo -create ios/Release-iphoneos/MUXSDKStatsTHEOplayer.framework/MUXSDKStatsTHEOplayer ios/Release-iphonesimulator/MUXSDKStatsTHEOplayer.framework/MUXSDKStatsTHEOplayer -output $TARGET_IOS_BINARY
-/usr/libexec/PlistBuddy -c 'Add :CFBundleSupportedPlatforms:1 string iPhoneSimulator' $PWD/ios/MUXSDKStatsTHEOplayer.framework/Info.plist
 cp -R ios/Release-iphonesimulator/MUXSDKStatsTHEOplayer.framework/Modules/MUXSDKStatsTHEOplayer.swiftmodule/* $PWD/ios/MUXSDKStatsTHEOplayer.framework/Modules/MUXSDKStatsTHEOplayer.swiftmodule
 
 cd ..
