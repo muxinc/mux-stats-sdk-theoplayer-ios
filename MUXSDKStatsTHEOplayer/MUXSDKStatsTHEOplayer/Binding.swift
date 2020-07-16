@@ -205,16 +205,14 @@ fileprivate extension Binding {
         guard let player = player else { return }
 
         playListener = player.addEventListener(type: PlayerEventTypes.PLAY) { (_: PlayEvent) in
-            self.isAdActive {
-                if !$0 {
-                    self.dispatchEvent(MUXSDKPlayEvent.self, checkVideoData: true)
-                } else {
-                    self.dispatchEvent(MUXSDKAdPlayEvent.self, checkVideoData: true, includeAdData: true)
-                    if (self.forceSendAdPlaying) {
-                        self.dispatchEvent(MUXSDKAdPlayingEvent.self, checkVideoData: true, includeAdData: true)
-                        self.forceSendAdPlaying = false
-                    }
+            if self.adIsActive {
+                self.dispatchEvent(MUXSDKAdPlayEvent.self, checkVideoData: true, includeAdData: true)
+                if (self.forceSendAdPlaying) {
+                    self.dispatchEvent(MUXSDKAdPlayingEvent.self, checkVideoData: true, includeAdData: true)
+                    self.forceSendAdPlaying = false
                 }
+            } else {
+                self.dispatchEvent(MUXSDKPlayEvent.self, checkVideoData: true)
             }
         }
 
@@ -230,57 +228,51 @@ fileprivate extension Binding {
         }
 
         playingListener = player.addEventListener(type: PlayerEventTypes.PLAYING) { (_: PlayingEvent) in
-            self.isAdActive {
-                self.setSizeDimensions()
-                if !$0 {
-                    self.dispatchEvent(MUXSDKPlayingEvent.self, checkVideoData: true)
-                } else {
-                    self.dispatchEvent(MUXSDKAdPlayingEvent.self, checkVideoData: true, includeAdData: true)
-                    self.forceSendAdPlaying = false
-                }
+            self.setSizeDimensions()
+            if (self.adIsActive) {
+                self.dispatchEvent(MUXSDKAdPlayingEvent.self, checkVideoData: true, includeAdData: true)
+                self.forceSendAdPlaying = false
+            } else {
+                self.dispatchEvent(MUXSDKPlayingEvent.self, checkVideoData: true)
             }
         }
         pauseListener = player.addEventListener(type: PlayerEventTypes.PAUSE) { (_: PauseEvent) in
-            self.isAdActive {
-                if !$0 {
-                    player.requestCurrentTime(completionHandler: { (time, _) in
-                        if let time = time, let duration = player.duration, time < duration {
-                            self.dispatchEvent(MUXSDKPauseEvent.self, checkVideoData: true)
-                        }
-                    })
-                } else {
-                    self.forceSendAdPlaying = true
-                    self.dispatchEvent(MUXSDKAdPauseEvent.self, checkVideoData: true, includeAdData: true)
-                }
+            if (self.adIsActive) {
+                self.forceSendAdPlaying = true
+                self.dispatchEvent(MUXSDKAdPauseEvent.self, checkVideoData: true, includeAdData: true)
+            } else {
+                player.requestCurrentTime(completionHandler: { (time, _) in
+                    if let time = time, let duration = player.duration, time < duration {
+                        self.dispatchEvent(MUXSDKPauseEvent.self, checkVideoData: true)
+                    }
+                })
             }
         }
         timeListener = player.addEventListener(type: PlayerEventTypes.TIME_UPDATE) { (evt: TimeUpdateEvent) in
-            self.isAdActive { adActive in
-                let time = evt.currentTime
-                if let duration = player.duration {
-                    if adActive {
-                        if time >= duration * 0.25 {
-                            if self.adProgress < .firstQuartile {
-                                self.dispatchEvent(MUXSDKAdFirstQuartileEvent.self, includeAdData: true)
-                                self.adProgress = .firstQuartile
-                            }
+            let time = evt.currentTime
+            if let duration = player.duration {
+                if (self.adIsActive) {
+                    if time >= duration * 0.25 {
+                        if self.adProgress < .firstQuartile {
+                            self.dispatchEvent(MUXSDKAdFirstQuartileEvent.self, includeAdData: true)
+                            self.adProgress = .firstQuartile
                         }
-                        if time >= duration * 0.5 {
-                            if self.adProgress < .midpoint {
-                                self.dispatchEvent(MUXSDKAdMidpointEvent.self, includeAdData: true)
-                                self.adProgress = .midpoint
-                            }
+                    }
+                    if time >= duration * 0.5 {
+                        if self.adProgress < .midpoint {
+                            self.dispatchEvent(MUXSDKAdMidpointEvent.self, includeAdData: true)
+                            self.adProgress = .midpoint
                         }
-                        if time >= duration * 0.75 {
-                            if self.adProgress < .thirdQuartile {
-                                self.dispatchEvent(MUXSDKAdThirdQuartileEvent.self, includeAdData: true)
-                                self.adProgress = .thirdQuartile
-                            }
+                    }
+                    if time >= duration * 0.75 {
+                        if self.adProgress < .thirdQuartile {
+                            self.dispatchEvent(MUXSDKAdThirdQuartileEvent.self, includeAdData: true)
+                            self.adProgress = .thirdQuartile
                         }
-                    } else {
-                        if time > 0, time < duration {
-                            self.dispatchEvent(MUXSDKTimeUpdateEvent.self, checkVideoData: true)
-                        }
+                    }
+                } else {
+                    if time > 0, time < duration {
+                        self.dispatchEvent(MUXSDKTimeUpdateEvent.self, checkVideoData: true)
                     }
                 }
             }
@@ -302,9 +294,11 @@ fileprivate extension Binding {
             self.dispatchEvent(MUXSDKTimeUpdateEvent.self, checkVideoData: true)
         }
         adBreakBeginListener = player.ads.addEventListener(type: AdsEventTypes.AD_BREAK_BEGIN) { (_: AdBreakBeginEvent) in
+            self.adIsActive = true
             self.dispatchEvent(MUXSDKAdBreakStartEvent.self, includeAdData: true)
         }
         adBreakEndListener = player.ads.addEventListener(type: AdsEventTypes.AD_BREAK_END) { (_: AdBreakEndEvent) in
+            self.adIsActive = false
             self.dispatchEvent(MUXSDKAdBreakEndEvent.self, includeAdData: true)
             self.ad = nil
         }
@@ -382,10 +376,6 @@ fileprivate extension Binding {
             player?.removeEventListener(type: AdsEventTypes.AD_ERROR, listener: adErrorListener)
             self.adErrorListener = nil
         }
-    }
-
-    func isAdActive(completion: @escaping (_ isActive: Bool) -> ()) {
-        player?.ads.requestCurrentAdBreak { (ads, _) in completion(ads != nil) }
     }
 }
 
