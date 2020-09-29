@@ -23,7 +23,7 @@ Then run `pod install`.
 * Place `THEOplayerSDK.framework` (>= 2.67.0) in the root folder
 
 ## How to release
-* Bump versions in MUXSDKStatsTHEOplayer.info, and Mux-Stats-THEOplayer.podspec
+* Bump versions in Mux-Stats-THEOplayer.podspec and Marketing Version in XCode Build Settings
 * Execute `update-release-frameworks.sh` to make a full build
 * Github - Create a PR to check in all changed files.
 * If approved, `git tag [YOUR NEW VERSION]` and `git push --tags`
