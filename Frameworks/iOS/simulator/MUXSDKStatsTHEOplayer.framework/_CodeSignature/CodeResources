@@ -10,15 +10,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		qntEVsIzOs8wbG5LBh2LmaBjBtc=
+		TzWp6JwvLA4MvNZ9QYhy9nbh1Hc=
 		</data>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		d7M4132AtULwhHR33nkOe4WtAgs=
+		k1cRs7ZKBNCvb4siLqGZd3UDMWs=
 		</data>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<data>
-		d7M4132AtULwhHR33nkOe4WtAgs=
+		k1cRs7ZKBNCvb4siLqGZd3UDMWs=
 		</data>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		ChYW5l4iGL8dwDY+7+NVQjQkrRg=
+		6zxOU3/ImlfB06Wp2ZF/UlFreuE=
 		</data>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		ChYW5l4iGL8dwDY+7+NVQjQkrRg=
+		6zxOU3/ImlfB06Wp2ZF/UlFreuE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -62,14 +62,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ITKsSNsZFad0Y/fw1hNF4AJdnyqefTZZpTikpZPbMbg=
+			Cm/N8FYIaG1OAuOfaikn2YirGHZY0TtjlGoegezgObE=
 			</data>
 		</dict>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ITKsSNsZFad0Y/fw1hNF4AJdnyqefTZZpTikpZPbMbg=
+			Cm/N8FYIaG1OAuOfaikn2YirGHZY0TtjlGoegezgObE=
 			</data>
 		</dict>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -90,7 +90,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			LvTGo6boJckuSeLkEYKV+79l9o5hmZkyF8bc1nVBULI=
+			m3AaXp2RNTKlQOvvqG4URLBBfubRSLJs+NESY6wz848=
 			</data>
 		</dict>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/x86_64.swiftdoc</key>
@@ -111,7 +111,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			LvTGo6boJckuSeLkEYKV+79l9o5hmZkyF8bc1nVBULI=
+			m3AaXp2RNTKlQOvvqG4URLBBfubRSLJs+NESY6wz848=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
