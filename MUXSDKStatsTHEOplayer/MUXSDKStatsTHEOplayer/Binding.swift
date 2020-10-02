@@ -78,7 +78,8 @@ internal class Binding: NSObject {
     func dispatchEvent<Event: MUXSDKPlaybackEvent>(_ type: Event.Type,
                                                    checkVideoData: Bool = false,
                                                    includeAdData: Bool = false,
-                                                   error: String? = nil) {
+                                                   error: String? = nil,
+                                                   errorCode: String? = nil) {
         if checkVideoData {
             self.checkVideoData()
         }
@@ -93,6 +94,7 @@ internal class Binding: NSObject {
             event.playerData = data
             if let error = error {
                 event.playerData!.playerErrorMessage = error
+                event.playerData!.playerErrorCode = errorCode
             }
             // careful here, we only want to disable MUXSDKErrorEvent
             // ad errors should still be triggered (MUXSDKAdErrorEvent)
@@ -284,7 +286,11 @@ fileprivate extension Binding {
             self.dispatchEvent(MUXSDKSeekedEvent.self)
         }
         errorListener = player.addEventListener(type: PlayerEventTypes.ERROR) { (event: ErrorEvent) in
-            self.dispatchEvent(MUXSDKErrorEvent.self, checkVideoData: true, error: event.error)
+            var errorCode = String(event.errorObject?.code.rawValue ?? 0)
+            if (errorCode == "0") {
+                errorCode = "Unknown Error Code"
+            }
+            self.dispatchEvent(MUXSDKErrorEvent.self, checkVideoData: true, error: event.error, errorCode: errorCode)
         }
         completeListener = player.addEventListener(type: PlayerEventTypes.ENDED) { (_: EndedEvent) in
             self.dispatchEvent(MUXSDKViewEndEvent.self, checkVideoData: true)
