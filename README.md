@@ -23,6 +23,7 @@ Then run `pod install`.
 * Place `THEOplayerSDK.framework` (>= 2.76.0) in the root folder
 
 ## How to release
+
 * Bump versions in Mux-Stats-THEOplayer.podspec
 * Bump Version in XCode > Target > General
 * Bump versions Constants.swift
