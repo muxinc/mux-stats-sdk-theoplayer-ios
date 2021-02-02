@@ -46,7 +46,7 @@ internal class Binding: NSObject {
             adProgress = .started
         }
     }
-    
+
     fileprivate var forceSendAdPlaying: Bool = false
 
     init(name: String, software: String, softwareVersion: String?, automaticErrorTracking: Bool) {
@@ -92,13 +92,15 @@ internal class Binding: NSObject {
 
         playerData { (data) in
             event.playerData = data
-            if let error = error {
-                event.playerData!.playerErrorMessage = error
-                event.playerData!.playerErrorCode = errorCode
-            }
             // careful here, we only want to disable MUXSDKErrorEvent
             // ad errors should still be triggered (MUXSDKAdErrorEvent)
+            // and we don't want to set the player data code/message for
+            // ad errors either
             if (type == MUXSDKErrorEvent.self) {
+                if let error = error {
+                    event.playerData!.playerErrorMessage = error
+                    event.playerData!.playerErrorCode = errorCode
+                }
                 if (self.automaticErrorTracking) {
                     MUXSDKCore.dispatchEvent(event, forPlayer: name)
                 }

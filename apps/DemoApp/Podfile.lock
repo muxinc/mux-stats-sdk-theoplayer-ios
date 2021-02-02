@@ -1,6 +1,6 @@
 PODS:
   - Mux-Stats-Core (2.3.0)
-  - Mux-Stats-THEOplayer (0.3.0):
+  - Mux-Stats-THEOplayer (0.4.0):
     - Mux-Stats-Core (~> 2.3)
 
 DEPENDENCIES:
@@ -16,8 +16,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Mux-Stats-Core: 636c325a6e2cc54fad54db0918f3da674eef694a
-  Mux-Stats-THEOplayer: 0f865b09487fcd2f37cf3890684801e1ba4e09fe
+  Mux-Stats-THEOplayer: a0604189f51145838c937f9166128bfd3d830b8f
 
 PODFILE CHECKSUM: 0ca72a69ca89cc7ad6048fd9c54a48326f08187b
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.10.0

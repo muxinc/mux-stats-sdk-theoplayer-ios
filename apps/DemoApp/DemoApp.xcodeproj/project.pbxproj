@@ -211,13 +211,11 @@
 				"${PODS_ROOT}/Target Support Files/Pods-DemoApp/Pods-DemoApp-frameworks.sh",
 				"${PODS_ROOT}/Mux-Stats-Core/Frameworks/iOS/fat/MuxCore.framework",
 				"${PODS_ROOT}/../../../Frameworks/iOS/fat/MUXSDKStatsTHEOplayer.framework",
-				"${PODS_ROOT}/../../../Frameworks/iOS/fat/MUXSDKStatsTHEOplayer.framework.dSYM",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MuxCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MUXSDKStatsTHEOplayer.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/MUXSDKStatsTHEOplayer.framework.dSYM",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -386,6 +384,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Debug;
 		};
@@ -407,6 +406,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mux.stats.ios.TheoDemoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Release;
 		};
