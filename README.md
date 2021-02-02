@@ -13,7 +13,7 @@ View [the guide on mux.com](https://docs.mux.com/docs/theoplayer-sdk-for-ios)
 Add this to your Podfile:
 
 ```
-pod 'Mux-Stats-THEOplayer', '~> 0.3'
+pod 'Mux-Stats-THEOplayer', '~> 0.4'
 ```
 
 Then run `pod install`.
@@ -23,7 +23,9 @@ Then run `pod install`.
 * Place `THEOplayerSDK.framework` (>= 2.76.0) in the root folder
 
 ## How to release
-* Bump versions in Mux-Stats-THEOplayer.podspec and Marketing Version in XCode Build Settings
+* Bump versions in Mux-Stats-THEOplayer.podspec
+* Bump Version in XCode > Target > General
+* Bump versions Constants.swift
 * Execute `update-release-frameworks.sh` to make a full build
 * Github - Create a PR to check in all changed files.
 * If approved, `git tag [YOUR NEW VERSION]` and `git push --tags`
