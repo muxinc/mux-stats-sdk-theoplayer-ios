@@ -3,4 +3,5 @@ platform :ios, '11.0'
 target 'DemoApp' do
   use_frameworks!
   pod 'Mux-Stats-THEOplayer', :path => '../..'
+  #pod 'Mux-Stats-THEOplayer', '~> 0.4'
 end
