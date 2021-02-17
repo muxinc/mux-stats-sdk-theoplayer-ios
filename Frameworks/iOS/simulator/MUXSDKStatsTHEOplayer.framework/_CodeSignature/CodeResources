@@ -10,15 +10,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		5N2qVbwl4zipJYQB3em53cvdhG0=
+		aTpZlUnO9hmX6+kKItFTvsEXSyo=
 		</data>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		tZcSKUka/GdIPlaP9i3jDinvpyc=
+		kKvQAkOkzPwBRqKjMhDuCscpwJs=
 		</data>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<data>
-		tZcSKUka/GdIPlaP9i3jDinvpyc=
+		kKvQAkOkzPwBRqKjMhDuCscpwJs=
 		</data>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		3nNM+apilcStl36WrOjJko0Q3+Y=
+		69wvuJnlfSA9ezKYu2AfIpYDWzg=
 		</data>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		3nNM+apilcStl36WrOjJko0Q3+Y=
+		69wvuJnlfSA9ezKYu2AfIpYDWzg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -62,14 +62,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			kX9nEUDMMAwZAmIxrevrW/zbESUr/MQGusnDM9KOA0E=
+			uuBUBEVMcRWKJfBe/t9LWmPerT2H01b9ZQ1u3bjZOII=
 			</data>
 		</dict>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			kX9nEUDMMAwZAmIxrevrW/zbESUr/MQGusnDM9KOA0E=
+			uuBUBEVMcRWKJfBe/t9LWmPerT2H01b9ZQ1u3bjZOII=
 			</data>
 		</dict>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -90,7 +90,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			HqwxhDUK6C58k0qMuO7/t9786Bh+wNDNKoBOyXDMUEE=
+			BaRozpOMhDUt1Ns10vLMbRwTogqIWC7/eEGe3D+vDPE=
 			</data>
 		</dict>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/x86_64.swiftdoc</key>
@@ -111,7 +111,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			HqwxhDUK6C58k0qMuO7/t9786Bh+wNDNKoBOyXDMUEE=
+			BaRozpOMhDUt1Ns10vLMbRwTogqIWC7/eEGe3D+vDPE=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

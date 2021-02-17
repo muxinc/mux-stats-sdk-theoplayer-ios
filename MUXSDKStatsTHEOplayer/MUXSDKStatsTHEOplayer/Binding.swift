@@ -318,7 +318,7 @@ fileprivate extension Binding {
             self.ad = nil
         }
         adErrorListener = player.ads.addEventListener(type: AdsEventTypes.AD_ERROR) { (event: AdErrorEvent) in
-            self.dispatchEvent(MUXSDKAdErrorEvent.self, error: event.error)
+            self.dispatchEvent(MUXSDKAdErrorEvent.self)
             self.ad = nil
         }
     }
