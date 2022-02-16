@@ -17,7 +17,8 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.player = THEOplayer(configuration: THEOplayerConfiguration(chromeless: false))
+        let playerConfig = THEOplayerConfiguration(chromeless: false, pip: PiPConfiguration(), license: "YOUR_LICENSE_KEY_HERE")
+        self.player = THEOplayer(configuration: playerConfig)
         self.player.frame = view.bounds
         self.player.addAsSubview(of: view)
 
@@ -31,14 +32,14 @@ class ViewController: UIViewController {
         self.player.source = source
         
         // TODO: Add your property key!
-        let playerData = MUXSDKCustomerPlayerData(environmentKey: "YOUR_ENV_KEY")!
+        let playerData = MUXSDKCustomerPlayerData(environmentKey: "YOUR_ENV_KEY_HERE")!
 
         let videoData = MUXSDKCustomerVideoData()
         videoData.videoTitle = "Big Buck Bunny"
         videoData.videoId = "bigbuckbunny"
         videoData.videoSeries = "animation"
 
-        MUXSDKStatsTHEOplayer.monitorTHEOplayer(self.player, name: playerName, playerData: playerData, videoData: videoData, softwareVersion: "1.1.1")
+        MUXSDKStatsTHEOplayer.monitorTHEOplayer(self.player, name: playerName, playerData: playerData, videoData: videoData, softwareVersion: nil)
         self.player.play()
 
         // Example of changing the video after 60 seconds

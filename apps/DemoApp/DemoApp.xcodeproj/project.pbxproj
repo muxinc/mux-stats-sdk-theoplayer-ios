@@ -9,27 +9,11 @@
 /* Begin PBXBuildFile section */
 		2B37659122E5114D009F4891 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B37659022E5114D009F4891 /* ViewController.swift */; };
 		2B37659322E5117F009F4891 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B37659222E5117F009F4891 /* AppDelegate.swift */; };
-		2B37659E22E5144F009F4891 /* THEOplayerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B37659922E5143C009F4891 /* THEOplayerSDK.framework */; };
-		2B37659F22E5144F009F4891 /* THEOplayerSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2B37659922E5143C009F4891 /* THEOplayerSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		57BB5DEF8A0DBE968C732E38 /* Pods_DemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 654D67DFE51D0F88CF3F7691 /* Pods_DemoApp.framework */; };
 		F444D4461DDB8EBF00FE804F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F444D4441DDB8EBF00FE804F /* Main.storyboard */; };
 		F444D4481DDB8EBF00FE804F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F444D4471DDB8EBF00FE804F /* Assets.xcassets */; };
 		F444D44B1DDB8EBF00FE804F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F444D4491DDB8EBF00FE804F /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		2B3765A022E5144F009F4891 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				2B37659F22E5144F009F4891 /* THEOplayerSDK.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2B37659022E5114D009F4891 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,7 +34,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B37659E22E5144F009F4891 /* THEOplayerSDK.framework in Frameworks */,
 				57BB5DEF8A0DBE968C732E38 /* Pods_DemoApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,7 +101,6 @@
 				F444D4341DDB8EBF00FE804F /* Sources */,
 				F444D4351DDB8EBF00FE804F /* Frameworks */,
 				F444D4361DDB8EBF00FE804F /* Resources */,
-				2B3765A022E5144F009F4891 /* Embed Frameworks */,
 				EFF4EB8B5B695B5EE91803A2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -211,11 +193,13 @@
 				"${PODS_ROOT}/Target Support Files/Pods-DemoApp/Pods-DemoApp-frameworks.sh",
 				"${PODS_ROOT}/Mux-Stats-Core/Frameworks/iOS/fat/MuxCore.framework",
 				"${PODS_ROOT}/../../../Frameworks/iOS/fat/MUXSDKStatsTHEOplayer.framework",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/THEOplayerSDK-basic/THEOplayerSDK.framework/THEOplayerSDK",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MuxCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MUXSDKStatsTHEOplayer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/THEOplayerSDK.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
