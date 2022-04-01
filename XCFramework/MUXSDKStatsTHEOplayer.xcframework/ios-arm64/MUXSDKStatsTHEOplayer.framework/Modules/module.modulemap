@@ -1,0 +1,4 @@
+framework module MUXSDKStatsTHEOplayer {
+  header "MUXSDKStatsTHEOplayer-Swift.h"
+  requires objc
+}

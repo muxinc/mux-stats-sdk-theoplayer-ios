@@ -16,6 +16,6 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target   = '11.0'
   s.dependency 'Mux-Stats-Core', '~>2.3'
-  s.vendored_frameworks = 'Frameworks/iOS/fat/MUXSDKStatsTHEOplayer.framework'
+  s.vendored_frameworks = 'XCFramework/MUXSDKStatsTHEOplayer.xcframework'
 
 end
