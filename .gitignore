@@ -2,4 +2,4 @@
 **/xcshareddata/*
 **/Pods/*
 **/*.xcworkspace/*
-THEOplayerSDK.framework/*
+THEOplayerSDK.xcframework/*

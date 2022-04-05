@@ -10,6 +10,7 @@
 		2B90072622DEC8D10069EECA /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B90071D22DEC1010069EECA /* Binding.swift */; };
 		2B90072722DEC8E20069EECA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B90071C22DEC1000069EECA /* Constants.swift */; };
 		2B90072822DEC8E80069EECA /* MUXSDKStatsTHEOplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B90071E22DEC1010069EECA /* MUXSDKStatsTHEOplayer.swift */; };
+		9EE6D4733ECCF5840605C9E6 /* libPods-MUXSDKStatsTHEOplayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87978089F5F035A5DD11B7B6 /* libPods-MUXSDKStatsTHEOplayer.a */; };
 		E9E4289A27F624D600BD1FF7 /* THEOplayerSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E4289827F624BF00BD1FF7 /* THEOplayerSDK.xcframework */; };
 		E9E4289B27F624D600BD1FF7 /* THEOplayerSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E9E4289827F624BF00BD1FF7 /* THEOplayerSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -32,6 +33,7 @@
 		2B90071C22DEC1000069EECA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2B90071D22DEC1010069EECA /* Binding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 		2B90071E22DEC1010069EECA /* MUXSDKStatsTHEOplayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUXSDKStatsTHEOplayer.swift; sourceTree = "<group>"; };
+		87978089F5F035A5DD11B7B6 /* libPods-MUXSDKStatsTHEOplayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MUXSDKStatsTHEOplayer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		935AA133E8C340C2F15186E5 /* Pods-MUXSDKStatsTHEOplayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUXSDKStatsTHEOplayer.debug.xcconfig"; path = "Target Support Files/Pods-MUXSDKStatsTHEOplayer/Pods-MUXSDKStatsTHEOplayer.debug.xcconfig"; sourceTree = "<group>"; };
 		96A98610D34639D4999F1074 /* Pods-MUXSDKStatsTHEOplayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUXSDKStatsTHEOplayer.release.xcconfig"; path = "Target Support Files/Pods-MUXSDKStatsTHEOplayer/Pods-MUXSDKStatsTHEOplayer.release.xcconfig"; sourceTree = "<group>"; };
 		E9E4289827F624BF00BD1FF7 /* THEOplayerSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = THEOplayerSDK.xcframework; path = ../THEOplayerSDK.xcframework; sourceTree = "<group>"; };
@@ -45,6 +47,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9E4289A27F624D600BD1FF7 /* THEOplayerSDK.xcframework in Frameworks */,
+				9EE6D4733ECCF5840605C9E6 /* libPods-MUXSDKStatsTHEOplayer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				E9E4289827F624BF00BD1FF7 /* THEOplayerSDK.xcframework */,
+				87978089F5F035A5DD11B7B6 /* libPods-MUXSDKStatsTHEOplayer.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
