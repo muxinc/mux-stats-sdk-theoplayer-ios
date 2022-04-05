@@ -209,7 +209,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DemoApp/Pods-DemoApp-frameworks.sh",
-				"${PODS_ROOT}/Mux-Stats-Core/Frameworks/iOS/fat/MuxCore.framework",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/Mux-Stats-Core/MuxCore.framework/MuxCore",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/Mux-Stats-THEOplayer/MUXSDKStatsTHEOplayer.framework/MUXSDKStatsTHEOplayer",
 			);
 			name = "[CP] Embed Pods Frameworks";

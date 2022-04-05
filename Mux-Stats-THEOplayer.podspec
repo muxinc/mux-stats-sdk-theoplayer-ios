@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.author           = { 'Mux' => 'ios-sdk@mux.com' }
 
   s.ios.deployment_target   = '11.0'
-  s.dependency 'Mux-Stats-Core', '~>2.3'
+  s.dependency 'Mux-Stats-Core', '~>3.10.1'
   s.vendored_frameworks = 'XCFramework/MUXSDKStatsTHEOplayer.xcframework'
 
 end

@@ -1,7 +1,7 @@
 PODS:
-  - Mux-Stats-Core (2.4.1)
+  - Mux-Stats-Core (3.10.1)
   - Mux-Stats-THEOplayer (0.4.1):
-    - Mux-Stats-Core (~> 2.3)
+    - Mux-Stats-Core (~> 3.10.1)
 
 DEPENDENCIES:
   - Mux-Stats-THEOplayer (from `../..`)
@@ -15,9 +15,9 @@ EXTERNAL SOURCES:
     :path: "../.."
 
 SPEC CHECKSUMS:
-  Mux-Stats-Core: 0974bcd43bcf16d7ba07518f07001ba5c33749db
-  Mux-Stats-THEOplayer: 18f72fe63b89a94d5de3a82324b2eccee551d04c
+  Mux-Stats-Core: 8921bc53dec169723c6cb40a3bedc087738c55a3
+  Mux-Stats-THEOplayer: 85c1ec165a5ad78c6880480de4668ef829982087
 
 PODFILE CHECKSUM: 809132d7eb84f2e96f0bc77737462559b912b259
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3
