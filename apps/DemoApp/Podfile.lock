@@ -1,7 +1,7 @@
 PODS:
   - Mux-Stats-Core (3.10.1)
   - Mux-Stats-THEOplayer (0.4.1):
-    - Mux-Stats-Core (~> 3.10.1)
+    - Mux-Stats-Core (~> 3.10)
 
 DEPENDENCIES:
   - Mux-Stats-THEOplayer (from `../..`)
@@ -16,7 +16,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Mux-Stats-Core: 8921bc53dec169723c6cb40a3bedc087738c55a3
-  Mux-Stats-THEOplayer: 85c1ec165a5ad78c6880480de4668ef829982087
+  Mux-Stats-THEOplayer: da3fde979a439cf4af52fab4c34eddbc92aa0e19
 
 PODFILE CHECKSUM: 809132d7eb84f2e96f0bc77737462559b912b259
 

@@ -1,5 +1,5 @@
 target 'MUXSDKStatsTHEOplayer' do
   platform :ios, '9.0'
 
-  pod 'Mux-Stats-Core', '~>3.10.1'
+  pod 'Mux-Stats-Core', '~>3.10'
 end
