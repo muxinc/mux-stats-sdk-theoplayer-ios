@@ -86,7 +86,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		qivbd4yaaYHGrlel+iO/4NTho0Y=
+		W36EIYg9Cn4cucDJlilgUzImN60=
 		</data>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -98,7 +98,7 @@
 		</data>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		zp9tx+4q5S+eRoh0N4KsoaVLBBA=
+		njg0aqs/zmrpN8aygMP7QAIXbQQ=
 		</data>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -110,7 +110,7 @@
 		</data>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		zp9tx+4q5S+eRoh0N4KsoaVLBBA=
+		njg0aqs/zmrpN8aygMP7QAIXbQQ=
 		</data>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -122,7 +122,7 @@
 		</data>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		kVpDOxfD7kWaCoQ9uA20Fi0b2Qk=
+		nJAptvlmt7p6NxCD9h/h8nw5Vf4=
 		</data>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -134,7 +134,7 @@
 		</data>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		kVpDOxfD7kWaCoQ9uA20Fi0b2Qk=
+		nJAptvlmt7p6NxCD9h/h8nw5Vf4=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -301,7 +301,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			d4dyp89CHchmoCSU0GlEcizdN/hB/wU51bzECz/dNoo=
+			oU/rsGgdzK0iUsJS9OQH6zZLrisZJt8laoV8s4NwJb0=
 			</data>
 		</dict>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/arm64.swiftdoc</key>
@@ -322,7 +322,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			d4dyp89CHchmoCSU0GlEcizdN/hB/wU51bzECz/dNoo=
+			oU/rsGgdzK0iUsJS9OQH6zZLrisZJt8laoV8s4NwJb0=
 			</data>
 		</dict>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -343,7 +343,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			M6/TN7tVIQrapZqyu4XJoWnVv2sdca20i7e8MaofK6E=
+			N1TL6FDgfAh8h1niGxMp5WfioRY81EX7XVIgV8qSS/s=
 			</data>
 		</dict>
 		<key>Modules/MUXSDKStatsTHEOplayer.swiftmodule/x86_64.swiftdoc</key>
@@ -364,7 +364,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			M6/TN7tVIQrapZqyu4XJoWnVv2sdca20i7e8MaofK6E=
+			N1TL6FDgfAh8h1niGxMp5WfioRY81EX7XVIgV8qSS/s=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
