@@ -3,25 +3,40 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2B90072522DEC5C10069EECA /* THEOplayerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B90072422DEC5C10069EECA /* THEOplayerSDK.framework */; };
 		2B90072622DEC8D10069EECA /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B90071D22DEC1010069EECA /* Binding.swift */; };
 		2B90072722DEC8E20069EECA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B90071C22DEC1000069EECA /* Constants.swift */; };
 		2B90072822DEC8E80069EECA /* MUXSDKStatsTHEOplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B90071E22DEC1010069EECA /* MUXSDKStatsTHEOplayer.swift */; };
-		C36FACF766EC4DE6751F6AE4 /* libPods-MUXSDKStatsTHEOplayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87F00FC86FC3C53F3A4DE466 /* libPods-MUXSDKStatsTHEOplayer.a */; };
+		9EE6D4733ECCF5840605C9E6 /* libPods-MUXSDKStatsTHEOplayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87978089F5F035A5DD11B7B6 /* libPods-MUXSDKStatsTHEOplayer.a */; };
+		E9E4289A27F624D600BD1FF7 /* THEOplayerSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E4289827F624BF00BD1FF7 /* THEOplayerSDK.xcframework */; };
+		E9E4289B27F624D600BD1FF7 /* THEOplayerSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E9E4289827F624BF00BD1FF7 /* THEOplayerSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E9B18F2F27F4F11D0054F80A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E9E4289B27F624D600BD1FF7 /* THEOplayerSDK.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2B90071C22DEC1000069EECA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2B90071D22DEC1010069EECA /* Binding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 		2B90071E22DEC1010069EECA /* MUXSDKStatsTHEOplayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUXSDKStatsTHEOplayer.swift; sourceTree = "<group>"; };
-		2B90072422DEC5C10069EECA /* THEOplayerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = THEOplayerSDK.framework; path = ../THEOplayerSDK.framework; sourceTree = "<group>"; };
-		87F00FC86FC3C53F3A4DE466 /* libPods-MUXSDKStatsTHEOplayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MUXSDKStatsTHEOplayer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		87978089F5F035A5DD11B7B6 /* libPods-MUXSDKStatsTHEOplayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MUXSDKStatsTHEOplayer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		935AA133E8C340C2F15186E5 /* Pods-MUXSDKStatsTHEOplayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUXSDKStatsTHEOplayer.debug.xcconfig"; path = "Target Support Files/Pods-MUXSDKStatsTHEOplayer/Pods-MUXSDKStatsTHEOplayer.debug.xcconfig"; sourceTree = "<group>"; };
 		96A98610D34639D4999F1074 /* Pods-MUXSDKStatsTHEOplayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUXSDKStatsTHEOplayer.release.xcconfig"; path = "Target Support Files/Pods-MUXSDKStatsTHEOplayer/Pods-MUXSDKStatsTHEOplayer.release.xcconfig"; sourceTree = "<group>"; };
+		E9E4289827F624BF00BD1FF7 /* THEOplayerSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = THEOplayerSDK.xcframework; path = ../THEOplayerSDK.xcframework; sourceTree = "<group>"; };
 		F4DCACFD1DCA892E0094D94C /* MUXSDKStatsTHEOplayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MUXSDKStatsTHEOplayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4DCAD011DCA892E0094D94C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -31,8 +46,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B90072522DEC5C10069EECA /* THEOplayerSDK.framework in Frameworks */,
-				C36FACF766EC4DE6751F6AE4 /* libPods-MUXSDKStatsTHEOplayer.a in Frameworks */,
+				E9E4289A27F624D600BD1FF7 /* THEOplayerSDK.xcframework in Frameworks */,
+				9EE6D4733ECCF5840605C9E6 /* libPods-MUXSDKStatsTHEOplayer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,8 +66,8 @@
 		6808FFDC7DFF60E4CC0995AB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2B90072422DEC5C10069EECA /* THEOplayerSDK.framework */,
-				87F00FC86FC3C53F3A4DE466 /* libPods-MUXSDKStatsTHEOplayer.a */,
+				E9E4289827F624BF00BD1FF7 /* THEOplayerSDK.xcframework */,
+				87978089F5F035A5DD11B7B6 /* libPods-MUXSDKStatsTHEOplayer.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -108,6 +123,7 @@
 				F4DCACF91DCA892E0094D94C /* Frameworks */,
 				F4DCACFA1DCA892E0094D94C /* Headers */,
 				F4DCACFB1DCA892E0094D94C /* Resources */,
+				E9B18F2F27F4F11D0054F80A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -205,7 +221,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -259,6 +275,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -268,7 +285,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -316,6 +333,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				VALIDATE_WORKSPACE = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -345,8 +363,12 @@
 				INFOPLIST_FILE = MUXSDKStatsTHEOplayer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 0.4.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.5.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mux.stats.ios.MUXSDKStatsTHEOplayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -378,8 +400,12 @@
 				INFOPLIST_FILE = MUXSDKStatsTHEOplayer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 0.4.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.5.0;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mux.stats.ios.MUXSDKStatsTHEOplayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";

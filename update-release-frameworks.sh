@@ -1,37 +1,39 @@
+BUILD_DIR=$PWD/MUXSDKStatsTHEOplayer/xc
+PROJECT=$PWD/MUXSDKStatsTHEOplayer/MUXSDKStatsTHEOplayer.xcworkspace
+TARGET_DIR=$PWD/XCFramework
+
+
 # Delete the old stuff
-rm -Rf Frameworks
-# Make the target directories
-mkdir -p Frameworks/iOS/fat
-mkdir -p Frameworks/iOS/release
-mkdir -p Frameworks/iOS/simulator
+rm -Rf $TARGET_DIR
 
-cd MUXSDKStatsTHEOplayer
+# Make the build directory
+mkdir -p $BUILD_DIR
+# Make the target directory
+mkdir -p $TARGET_DIR
 
-# Build iOS release SDK
-xcodebuild -workspace 'MUXSDKStatsTHEOplayer.xcworkspace' -configuration Release archive -scheme 'MUXSDKStatsTHEOplayer' -sdk iphoneos SYMROOT=$PWD/ios
-# Build iOS simulator SDK
-xcodebuild -workspace 'MUXSDKStatsTHEOplayer.xcworkspace' -configuration Release -scheme 'MUXSDKStatsTHEOplayer' -destination 'platform=iOS Simulator,name=iPhone 8' SYMROOT=$PWD/ios
+# Clean up on error
+clean_up_error () {
+    rm -Rf $BUILD_DIR
+    exit 1
+}
 
-# Prepare the release .framework
-cp -R -L ios/Release-iphoneos/MUXSDKStatsTHEOplayer.framework ios/MUXSDKStatsTHEOplayer.framework
-cp -R ios/Release-iphoneos/MUXSDKStatsTHEOplayer.framework.dSYM ios/MUXSDKStatsTHEOplayer.framework.dSYM
-TARGET_IOS_BINARY=$PWD/ios/MUXSDKStatsTHEOplayer.framework/MUXSDKStatsTHEOplayer
-rm $TARGET_IOS_BINARY
+# Build and clean up on error
+build () {
+  scheme=$1
+  destination="$2"
+  path="$3"
+  
+  xcodebuild archive -scheme $scheme -workspace $PROJECT -destination "$destination" -archivePath "$path" SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES || clean_up_error
+}
 
-# Make the iOS fat binary
-lipo -create ios/Release-iphoneos/MUXSDKStatsTHEOplayer.framework/MUXSDKStatsTHEOplayer ios/Release-iphonesimulator/MUXSDKStatsTHEOplayer.framework/MUXSDKStatsTHEOplayer -output $TARGET_IOS_BINARY
-cp -R ios/Release-iphonesimulator/MUXSDKStatsTHEOplayer.framework/Modules/MUXSDKStatsTHEOplayer.swiftmodule/* $PWD/ios/MUXSDKStatsTHEOplayer.framework/Modules/MUXSDKStatsTHEOplayer.swiftmodule
-
-cd ..
-
-# Copy over iOS frameworks
-cp -R MUXSDKStatsTHEOplayer/ios/Release-iphonesimulator/MUXSDKStatsTHEOplayer.framework Frameworks/iOS/simulator/MUXSDKStatsTHEOplayer.framework
-cp -R MUXSDKStatsTHEOplayer/ios/Release-iphonesimulator/MUXSDKStatsTHEOplayer.framework.dSYM Frameworks/iOS/simulator/MUXSDKStatsTHEOplayer.framework.dSYM
-cp -R -L MUXSDKStatsTHEOplayer/ios/Release-iphoneos/MUXSDKStatsTHEOplayer.framework Frameworks/iOS/release/MUXSDKStatsTHEOplayer.framework
-cp -R MUXSDKStatsTHEOplayer/ios/Release-iphoneos/MUXSDKStatsTHEOplayer.framework.dSYM Frameworks/iOS/release/MUXSDKStatsTHEOplayer.framework.dSYM
-cp -R MUXSDKStatsTHEOplayer/ios/MUXSDKStatsTHEOplayer.framework Frameworks/iOS/fat/MUXSDKStatsTHEOplayer.framework
-cp -R MUXSDKStatsTHEOplayer/ios/MUXSDKStatsTHEOplayer.framework.dSYM Frameworks/iOS/fat/MUXSDKStatsTHEOplayer.framework.dSYM
-
+################ Build MUXSDKStatsTHEOplayer SDK
+#
+build MUXSDKStatsTHEOplayer "generic/platform=iOS" "$BUILD_DIR/MUXSDKStatsTHEOplayer.iOS.xcarchive"
+build MUXSDKStatsTHEOplayer "generic/platform=iOS Simulator" "$BUILD_DIR/MUXSDKStatsTHEOplayer.iOS-simulator.xcarchive"
+  
+ xcodebuild -create-xcframework -framework "$BUILD_DIR/MUXSDKStatsTHEOplayer.iOS.xcarchive/Products/Library/Frameworks/MUXSDKStatsTHEOplayer.framework" \
+                                -framework "$BUILD_DIR/MUXSDKStatsTHEOplayer.iOS-simulator.xcarchive/Products/Library/Frameworks/MUXSDKStatsTHEOplayer.framework" \
+                                -output "$TARGET_DIR/MUXSDKStatsTHEOplayer.xcframework" || clean_up_error
 
 # Clean up
-rm -Rf MUXSDKStatsTHEOplayer/ios
+rm -Rf $BUILD_DIR
