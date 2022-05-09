@@ -37,8 +37,22 @@ class ViewController: UIViewController {
         videoData.videoTitle = "Big Buck Bunny"
         videoData.videoId = "bigbuckbunny"
         videoData.videoSeries = "animation"
+        
+        let customData = MUXSDKCustomData()
+        customData.customData1 = "Theo Player Demo"
+        customData.customData2 = "Custom Dimension 2"
 
-        MUXSDKStatsTHEOplayer.monitorTHEOplayer(self.player, name: playerName, playerData: playerData, videoData: videoData, softwareVersion: "1.1.1")
+        let customerData = MUXSDKCustomerData()
+        customerData.customerPlayerData = playerData
+        customerData.customerVideoData = videoData
+        customerData.customData = customData
+        
+        MUXSDKStatsTHEOplayer.monitorTHEOplayer(
+            self.player,
+            name: playerName,
+            customerData: customerData,
+            softwareVersion: "1.1.1"
+        )
         self.player.play()
 
         // Example of changing the video after 60 seconds

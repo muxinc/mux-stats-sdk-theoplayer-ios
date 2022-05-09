@@ -75,21 +75,23 @@ internal class Binding: NSObject {
         isLive = false
     }
 
-    func dispatchEvent<Event: MUXSDKPlaybackEvent>(_ type: Event.Type,
-                                                   checkVideoData: Bool = false,
-                                                   includeAdData: Bool = false,
-                                                   error: String? = nil,
-                                                   errorCode: String? = nil) {
+    func dispatchEvent<Event: MUXSDKPlaybackEvent>(
+        _ type: Event.Type,
+        checkVideoData: Bool = false,
+        includeAdData: Bool = false,
+        error: String? = nil,
+        errorCode: String? = nil
+    ) {
         if checkVideoData {
             self.checkVideoData()
         }
-
+        
         let event = Event()
         if (includeAdData) {
             event.viewData = self.ad?.viewData
         }
         let name = self.name
-
+        
         playerData { (data) in
             event.playerData = data
             // careful here, we only want to disable MUXSDKErrorEvent
