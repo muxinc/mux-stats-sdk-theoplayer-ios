@@ -24,7 +24,7 @@ public class MUXSDKStatsTHEOplayer: NSObject {
      - Parameters:
         - _: A player object to monitor
         - name: A name for this instance of the player
-        - customerData: A MUXSDKCustomerData object with player, video, and view metadata
+        - customerData: A MUXSDKCustomerData object with player, video, view and custom metadata
         - softwareVersion Optional string to specify the software version metadata
         - automaticErrorTracking Boolean that will enable or disable automatic error tracking. If you use this you will need to use theMUXSDKStatsTHEOplayer  dispatchError method to track fatal errors manually. (default is true)
      */
@@ -113,7 +113,7 @@ public class MUXSDKStatsTHEOplayer: NSObject {
 
      - Parameters:
          - name: The name of the player to update
-         - customerData: A MUXSDKCustomerData object with player, video, and view metadata
+         - customerData: A MUXSDKCustomerData object with player, video, view and custom metadata
      */
     public static func videoChangeForPlayer(name: String, customerData: MUXSDKCustomerData) {
         guard let player = bindings[name] else { return }
