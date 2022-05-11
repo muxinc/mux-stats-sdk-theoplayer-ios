@@ -12,6 +12,48 @@ import THEOplayerSDK
 
 public class MUXSDKStatsTHEOplayer: NSObject {
     static var bindings: [String: Binding] = [:]
+    
+    // Customer Data Store
+    static let customerDataStore = MUXSDKCustomerDataStore()
+    
+    /**
+     Starts to monitor a given THEOplayer object.
+
+     Use this method to start a Mux player monitor on the given THEoplayer object. The player must have a name which is globally unique. The config provided should match the specifications in the Mux docs at https://docs.mux.com
+
+     - Parameters:
+        - _: A player object to monitor
+        - name: A name for this instance of the player
+        - customerData: A MUXSDKCustomerData object with player, video, view and custom metadata
+        - softwareVersion Optional string to specify the software version metadata
+        - automaticErrorTracking Boolean that will enable or disable automatic error tracking. If you use this you will need to use theMUXSDKStatsTHEOplayer  dispatchError method to track fatal errors manually. (default is true)
+     */
+    public static func monitorTHEOplayer(
+        _ player: THEOplayer,
+        name: String,
+        customerData: MUXSDKCustomerData,
+        softwareVersion: String? = nil,
+        automaticErrorTracking: Bool = true
+    ) {
+        initSDK()
+
+        if bindings.keys.contains(name) {
+            destroyPlayer(name: name)
+        }
+
+        let binding = Binding(name: name, software: Constants.software, softwareVersion: softwareVersion, automaticErrorTracking: automaticErrorTracking)
+        binding.attachPlayer(player)
+        bindings[name] = binding
+
+        // This MUXSDKViewInitEvent has to be sent synchronously, or anything in
+        // the data event may be blown away by the ViewInit coming in after the DataEvent.
+        let event = MUXSDKViewInitEvent()
+        MUXSDKCore.dispatchEvent(event, forPlayer: name)
+        
+        customerDataStore.setData(customerData, forPlayerName: name)
+        dispatchDataEvent(playerName: name, customerData: customerData, videoChange: false)
+        binding.dispatchEvent(MUXSDKPlayerReadyEvent.self)
+    }
 
     /**
      Starts to monitor a given THEOplayer object.
@@ -26,19 +68,22 @@ public class MUXSDKStatsTHEOplayer: NSObject {
         - softwareVersion Optional string to specify the software version metadata
         - automaticErrorTracking Boolean that will enable or disable automatic error tracking. If you use this you will need to use theMUXSDKStatsTHEOplayer  dispatchError method to track fatal errors manually. (default is true)
      */
-    public static func monitorTHEOplayer(_ player: THEOplayer,
-                                               name: String,
-                                               playerData: MUXSDKCustomerPlayerData,
-                                               videoData: MUXSDKCustomerVideoData,
-                                               softwareVersion: String? = nil,
-                                               automaticErrorTracking: Bool = true) {
+    @available(*, deprecated, message: "Please migrate to monitorTHEOplayer:name:customerData:softwareVersion:automaticErrorTracking")
+    public static func monitorTHEOplayer(
+        _ player: THEOplayer,
+        name: String,
+        playerData: MUXSDKCustomerPlayerData,
+        videoData: MUXSDKCustomerVideoData,
+        softwareVersion: String? = nil,
+        automaticErrorTracking: Bool = true
+    ) {
         initSDK()
 
         if bindings.keys.contains(name) {
             destroyPlayer(name: name)
         }
 
-        let binding = Binding(name: name, software: Constants.software, softwareVersion: softwareVersion, automaticErrorTracking: automaticErrorTracking) //, delegate: delegate)
+        let binding = Binding(name: name, software: Constants.software, softwareVersion: softwareVersion, automaticErrorTracking: automaticErrorTracking)
         binding.attachPlayer(player)
         bindings[name] = binding
 
@@ -46,7 +91,17 @@ public class MUXSDKStatsTHEOplayer: NSObject {
         // the data event may be blown away by the ViewInit coming in after the DataEvent.
         let event = MUXSDKViewInitEvent()
         MUXSDKCore.dispatchEvent(event, forPlayer: name)
-        dispatchDataEvent(playerName: name, playerData: playerData, videoData: videoData)
+        
+        guard let customerData = MUXSDKCustomerData(
+            customerPlayerData: playerData,
+            videoData: videoData,
+            viewData: nil
+        ) else {
+            return
+        }
+        
+        customerDataStore.setData(customerData, forPlayerName: name)
+        dispatchDataEvent(playerName: name, customerData: customerData, videoChange: false)
         binding.dispatchEvent(MUXSDKPlayerReadyEvent.self)
     }
 
@@ -58,9 +113,40 @@ public class MUXSDKStatsTHEOplayer: NSObject {
 
      - Parameters:
          - name: The name of the player to update
+         - customerData: A MUXSDKCustomerData object with player, video, view and custom metadata
+     */
+    public static func videoChangeForPlayer(name: String, customerData: MUXSDKCustomerData) {
+        guard let player = bindings[name] else { return }
+
+        // These events (ViewEnd and ViewInit) need to be sent synchronously, or anything in
+        // the data event may be blown away by the ViewInit coming in after the DataEvent.
+        let viewEndEvent = MUXSDKViewEndEvent()
+        MUXSDKCore.dispatchEvent(viewEndEvent, forPlayer: name)
+        player.resetVideoData()
+        let viewInitEvent = MUXSDKViewInitEvent()
+        MUXSDKCore.dispatchEvent(viewInitEvent, forPlayer: name)
+
+        // Update existing data for player only with non nil properties of the injected customerData
+        customerDataStore.updateData(customerData, forPlayerName: name)
+        
+        guard let updatedCustomerData = customerDataStore.dataForPlayerName(name) else {
+            return
+        }
+        
+        dispatchDataEvent(playerName: name, customerData: updatedCustomerData, videoChange: true)
+    }
+    
+    /**
+     Signals that a player is now playing a different video.
+
+     Use this method to signal that the player is now playing a new video. The player name provided must been passed as the name in a monitorTHEOplayer(_:, name:, playerData:, videoData:) call. If the name of the player provided was not previously initialized, no action will be taken.
+
+     - Parameters:
+         - name: The name of the player to update
          - playerData A MUXSDKCustomerPlayerData object with player metadata
          - videoData A MUXSDKCustomerVideoData object with video metadata
      */
+    @available(*, deprecated, message: "Please migrate to videoChangeForPlayer:name:customerData")
     public static func videoChangeForPlayer(name: String, videoData: MUXSDKCustomerVideoData) {
         guard let player = bindings[name] else { return }
 
@@ -72,10 +158,19 @@ public class MUXSDKStatsTHEOplayer: NSObject {
         let viewInitEvent = MUXSDKViewInitEvent()
         MUXSDKCore.dispatchEvent(viewInitEvent, forPlayer: name)
 
-        let dataEvent = MUXSDKDataEvent()
-        dataEvent.customerVideoData = videoData
-        dataEvent.videoChange = true
-        MUXSDKCore.dispatchEvent(dataEvent, forPlayer: name)
+        guard
+            let customerData = MUXSDKCustomerData(customerPlayerData: nil, videoData: videoData, viewData: nil)
+        else {
+            return
+        }
+        
+        customerDataStore.updateData(customerData, forPlayerName: name)
+        
+        guard let updatedCustomerData = customerDataStore.dataForPlayerName(name) else {
+            return
+        }
+        
+        dispatchDataEvent(playerName: name, customerData: updatedCustomerData, videoChange: true)
     }
 
     /**
@@ -163,11 +258,18 @@ fileprivate extension MUXSDKStatsTHEOplayer {
     }
 
     static func dispatchDataEvent(
-        playerName: String, playerData: MUXSDKCustomerPlayerData, videoData: MUXSDKCustomerVideoData) {
-        let event = MUXSDKDataEvent()
-        event.customerPlayerData = playerData
-        event.customerVideoData = videoData
-        MUXSDKCore.dispatchEvent(event, forPlayer: playerName)
+        playerName: String,
+        customerData: MUXSDKCustomerData,
+        videoChange: Bool
+    ) {
+        let dataEvent = MUXSDKDataEvent()
+        dataEvent.customerPlayerData = customerData.customerPlayerData
+        dataEvent.customerVideoData = customerData.customerVideoData
+        dataEvent.customerViewData = customerData.customerViewData
+        dataEvent.customData = customerData.customData
+        dataEvent.videoChange = videoChange
+        
+        MUXSDKCore.dispatchEvent(dataEvent, forPlayer: playerName)
     }
 }
 

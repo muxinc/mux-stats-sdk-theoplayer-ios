@@ -10,6 +10,6 @@ import Foundation
 
 internal struct Constants {
     static let pluginName = "ios-theoplayer-mux"
-    static let pluginVersion = "0.5.0"
+    static let pluginVersion = "0.6.0"
     static let software = "THEOplayer"
 }
