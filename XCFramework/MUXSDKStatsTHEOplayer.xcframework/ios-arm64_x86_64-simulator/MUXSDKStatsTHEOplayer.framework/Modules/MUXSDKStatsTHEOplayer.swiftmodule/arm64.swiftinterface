@@ -1,0 +1,20 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name MUXSDKStatsTHEOplayer
+import Foundation
+import MuxCore
+import Swift
+import THEOplayerSDK
+import _Concurrency
+@objc @_inheritsConvenienceInitializers public class MUXSDKStatsTHEOplayer : ObjectiveC.NSObject {
+  public static func monitorTHEOplayer(_ player: THEOplayerSDK.THEOplayer, name: Swift.String, customerData: MuxCore.MUXSDKCustomerData, softwareVersion: Swift.String? = nil, automaticErrorTracking: Swift.Bool = true)
+  @available(*, deprecated, message: "Please migrate to monitorTHEOplayer:name:customerData:softwareVersion:automaticErrorTracking")
+  public static func monitorTHEOplayer(_ player: THEOplayerSDK.THEOplayer, name: Swift.String, playerData: MuxCore.MUXSDKCustomerPlayerData, videoData: MuxCore.MUXSDKCustomerVideoData, softwareVersion: Swift.String? = nil, automaticErrorTracking: Swift.Bool = true)
+  public static func videoChangeForPlayer(name: Swift.String, customerData: MuxCore.MUXSDKCustomerData)
+  @available(*, deprecated, message: "Please migrate to videoChangeForPlayer:name:customerData")
+  public static func videoChangeForPlayer(name: Swift.String, videoData: MuxCore.MUXSDKCustomerVideoData)
+  public static func destroyPlayer(name: Swift.String)
+  public static func dispatchError(name: Swift.String, code: Swift.String, message: Swift.String)
+  @objc override dynamic public init()
+  @objc deinit
+}
