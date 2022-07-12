@@ -12,7 +12,7 @@ View [the guide on mux.com](https://docs.mux.com/docs/theoplayer-sdk-for-ios)
 
 ## Installation
 
-To use Mux's integration with Theoplayer in your iOS project, add this to your Podfile:
+To use Mux's THEOplayer integration in your iOS project, add this to your Podfile:
 
 ```
 pod 'Mux-Stats-THEOplayer', '~> 0.4'
@@ -24,15 +24,20 @@ Then run `pod install`.
 
 * In `MUXSDKStatsTHEOplayer/`, install the required dependencies: `pod install`
 * Download `THEOplayerSDK.xcframework` (>= 2.76.0) from the THEOplayer portal
-* Open `MUXSDKStatsTHEOplayer/MUXSDKStatsTHEOplayer.xcworkspace` in XCode and make sure the XCode Target to iPhone 11.
-* Delete the existing reference to `THEOplayerSDK.xcframework` in `MUXSDKStatsTHEOplayer/Frameworks` in the XCode project navigator
-* Drag and drop the downloaded `THEOplayerSDK.xcframework` from Finder into `MUXSDKStatsTHEOplayer/Frameworks` in XCode
-* Hit CMD + B to build the project -- it should succeed.
+* In Xcode: Open `MUXSDKStatsTHEOplayer/MUXSDKStatsTHEOplayer.xcworkspace`
+  * In the project navigator:
+     * Delete the existing reference to `THEOplayerSDK.xcframework` in `MUXSDKStatsTHEOplayer/Frameworks`
+     * Drag and drop the downloaded `THEOplayerSDK.xcframework` from Finder into `MUXSDKStatsTHEOplayer/Frameworks`
+
+https://user-images.githubusercontent.com/15208707/178379606-7ba319e0-88eb-4b92-ba54-e07ac8485cf7.mov
+
+Hit CMD + B to build the project (making sure the build target is set to an iOS device or simulator) -- it should succeed.
+
 
 ## How to release
 
 * Bump versions in Mux-Stats-THEOplayer.podspec
-* Bump Version in XCode > MUXSDKStatsTheoplayer (Project Navigator)> Targets > MUXSDKStatsTHEOplayer > General > Identity.
+* Bump Version in Xcode > MUXSDKStatsTheoplayer (Project Navigator) > Targets > MUXSDKStatsTHEOplayer > General > Identity.
 * Bump versions in Constants.swift (`MUXSDKStatsTHEOplayer/MUXSDKStatsTHEOplayer/Constants.swift`)
 * Execute `update-release-frameworks.sh` to make a full build
 * Github - Create a PR to check in all changed files.
@@ -40,5 +45,5 @@ Then run `pod install`.
 * Github - Make a new release with the new version
 * Cocoapod - Run `pod spec lint` to local check pod validity
 * Cocoapod - Run `pod trunk push Mux-Stats-THEOplayer.podspec`
-* After the `update-release-frameworks.sh` build, run carthage-archive.sh.
+* After the `update-release-frameworks.sh` build, run `archive.sh`.
 * Then attach the output to the release
