@@ -24,10 +24,9 @@ Then run `pod install`.
 
 * In `MUXSDKStatsTHEOplayer/`, install the required dependencies: `pod install`
 * Download `THEOplayerSDK.xcframework` (>= 2.76.0) from the THEOplayer portal
-* In Xcode: Open `MUXSDKStatsTHEOplayer/MUXSDKStatsTHEOplayer.xcworkspace`
-  * In the project navigator:
-     * Delete the existing reference to `THEOplayerSDK.xcframework` in `MUXSDKStatsTHEOplayer/Frameworks`
-     * Drag and drop the downloaded `THEOplayerSDK.xcframework` from Finder into `MUXSDKStatsTHEOplayer/Frameworks`
+* In Xcode: Open `MUXSDKStatsTHEOplayer/MUXSDKStatsTHEOplayer.xcworkspace` and in the project navigator:
+  * Delete the existing reference to `THEOplayerSDK.xcframework` in `MUXSDKStatsTHEOplayer/Frameworks`
+  * Drag and drop the downloaded `THEOplayerSDK.xcframework` from Finder into `MUXSDKStatsTHEOplayer/Frameworks`
 
 https://user-images.githubusercontent.com/15208707/178379606-7ba319e0-88eb-4b92-ba54-e07ac8485cf7.mov
 
