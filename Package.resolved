@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "stats-sdk-objc",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/muxinc/stats-sdk-objc.git",
+      "state" : {
+        "revision" : "a1f6cf4e20e71257c8657bbbff1ac9771bb39a52",
+        "version" : "4.5.2"
+      }
+    },
+    {
+      "identity" : "theoplayer-sdk-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/THEOplayer/theoplayer-sdk-ios.git",
+      "state" : {
+        "revision" : "05e5e3c96d6ee99ae6893d7b932e7e3c7c7dfa93",
+        "version" : "5.9.1"
+      }
+    }
+  ],
+  "version" : 2
+}

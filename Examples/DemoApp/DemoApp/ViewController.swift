@@ -7,7 +7,7 @@
 //
 
 import MuxCore
-import MUXSDKStatsTHEOplayer
+import MuxStatsTHEOplayer
 import THEOplayerSDK
 import UIKit
 
