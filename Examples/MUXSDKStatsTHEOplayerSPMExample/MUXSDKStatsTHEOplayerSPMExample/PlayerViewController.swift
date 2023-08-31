@@ -8,6 +8,16 @@ import MuxStatsTHEOplayer
 import THEOplayerSDK
 import UIKit
 
+extension ProcessInfo {
+    var theoPlayerLicenseKey: String {
+        environment["THEOPLAYER_LICENSE_KEY"] ?? ""
+    }
+
+    var environmentKey: String {
+        environment["MUX_ENVIRONMENT_KEY"] ?? ""
+    }
+}
+
 class PlayerViewController: UIViewController {
 
     var playerContainerView: UIView!
@@ -46,7 +56,7 @@ class PlayerViewController: UIViewController {
 
         let playerConfig = THEOplayerConfiguration(
             pip: nil,
-            license: "sZP7IYe6T6PlIKhZClxe0ZzLIS5cFSx6Iu0-CKfZ06zt0QPKIKht3SXl3uR6FOPlUY3zWokgbgjNIOf9flCkISai0oBcFSac0LR-3uIK0Ok13lfkFSP63KXl0of_CShZTmfVfK4_bQgZCYxNWoryIQXzImf90SbZ3lho3Lfi0u5i0Oi6Io4pIYP1UQgqWgjeCYxgflEc3leZ0Lbt3Lf_3SBLFOPeWok1dDrLYtA1Ioh6TgV6v6fVfKcqCoXVdQjLUOfVfGxEIDjiWQXrIYfpCoj-fgzVfKxqWDXNWG3ybojkbK3gflNWf6E6FOPVWo31WQ1qbta6FOPzdQ4qbQc1sD4ZFK3qWmPUFOPLIQ-LflNWfKgqbZPUFOPLIDreYog-bwPgbt3NWo_6TGxZUDhVfKIgCYxkbK4LflNWYYz"
+            license: ProcessInfo.processInfo.theoPlayerLicenseKey
         )
 
         self.player = THEOplayer(
@@ -54,30 +64,10 @@ class PlayerViewController: UIViewController {
         )
         player.addAsSubview(of: playerContainerView)
 
-        listeners["play"] = player.addEventListener(
-            type: PlayerEventTypes.PLAY,
-            listener: onPlay(event:)
-        )
-        listeners["playing"] = player.addEventListener(
-            type: PlayerEventTypes.PLAYING,
-            listener: onPlaying(event:)
-        )
-        listeners["pause"] = player.addEventListener(
-            type: PlayerEventTypes.PAUSE,
-            listener: onPause(event:)
-        )
-        listeners["ended"] = player.addEventListener(
-            type: PlayerEventTypes.ENDED,
-            listener: onEnded(event:)
-        )
-        listeners["error"] = player.addEventListener(
-            type: PlayerEventTypes.ERROR,
-            listener: onError(event:)
-        )
-
         let typedSource = TypedSource(
             src: "https://stream.mux.com/tqe4KzdxU6GLc8oowshXgm019ibzhEX3k.m3u8",
-            type: "application/vnd.apple.mpegurl")
+            type: "application/vnd.apple.mpegurl"
+        )
 
         let ad = THEOAdDescription(src: "https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/ad_rule_samples&ciu_szs=300x250&ad_rule=1&impl=s&gdfp_req=1&env=vp&output=vmap&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ar%3Dpremidpostpod&cmsid=496&vid=short_onecue&correlator=")
 
@@ -86,7 +76,7 @@ class PlayerViewController: UIViewController {
 
         // TODO: Add your property key!
         let playerData = MUXSDKCustomerPlayerData(
-            environmentKey: "qr9665qr78dac0hqld9bjofps"
+            environmentKey: ProcessInfo.processInfo.environmentKey
         )!
 
         let videoData = MUXSDKCustomerVideoData()
@@ -115,6 +105,53 @@ class PlayerViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         player.frame = view.frame
+
+        listeners["play"] = player.addEventListener(
+            type: PlayerEventTypes.PLAY,
+            listener: onPlay(event:)
+        )
+        listeners["playing"] = player.addEventListener(
+            type: PlayerEventTypes.PLAYING,
+            listener: onPlaying(event:)
+        )
+        listeners["pause"] = player.addEventListener(
+            type: PlayerEventTypes.PAUSE,
+            listener: onPause(event:)
+        )
+        listeners["ended"] = player.addEventListener(
+            type: PlayerEventTypes.ENDED,
+            listener: onEnded(event:)
+        )
+        listeners["error"] = player.addEventListener(
+            type: PlayerEventTypes.ERROR,
+            listener: onError(event:)
+        )
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        player.removeEventListener(
+            type: PlayerEventTypes.PLAY,
+            listener: listeners["play"]!
+        )
+        player.removeEventListener(
+            type: PlayerEventTypes.PLAYING,
+            listener: listeners["playing"]!
+        )
+        player.removeEventListener(
+            type: PlayerEventTypes.PAUSE,
+            listener: listeners["pause"]!
+        )
+        player.removeEventListener(
+            type: PlayerEventTypes.ENDED,
+            listener: listeners["ended"]!
+        )
+        player.removeEventListener(
+            type: PlayerEventTypes.ERROR,
+            listener: listeners["error"]!
+        )
+        listeners.removeAll()
+
+        super.viewWillDisappear(animated)
     }
 
     override func viewDidLayoutSubviews() {
