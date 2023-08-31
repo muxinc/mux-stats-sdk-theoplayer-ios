@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = 'Mux-Stats-THEOplayer'
 
-  s.version          = '0.7.0'
+  s.version          = '0.8.0'
   s.source           = { :git => 'https://github.com/muxinc/mux-stats-sdk-theoplayer-ios.git',
                          :tag => "v#{s.version}" }
 
@@ -14,10 +14,12 @@ Pod::Spec.new do |s|
   s.license          = 'Apache 2.0'
   s.author           = { 'Mux' => 'ios-sdk@mux.com' }
 
-  s.ios.deployment_target   = '11.0'
+  s.ios.deployment_target   = '13.0'
+  s.swift_versions   = ['5.0']
 
-  s.source_files     = 'Sources/MuxStatsTHEOplayer/**/*.{swift}'
+  s.source_files     = 'Sources/**/*.swift'
 
   s.dependency 'Mux-Stats-Core', '~>3.10'
+  s.dependency 'THEOplayerSDK-core', '~>5.9'
 
 end
