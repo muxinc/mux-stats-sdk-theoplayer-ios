@@ -24,8 +24,8 @@ Add the following to your `Package.swift` dependencies
 
 ```swift
 .package(
-      url: "https://github.com/muxinc/stats-sdk-objc",
-      .upToNextMajor(from: "4.5.2")
+      url: "https://github.com/muxinc/mux-stats-sdk-theoplayer-ios",
+      .upToNextMajor(from: "0.8.0")
     ),
 ```
 
