@@ -18,14 +18,19 @@ extension ProcessInfo {
     }
 }
 
-class PlayerViewController: UIViewController {
+class BasicPlaybackViewController: UIViewController {
 
-    var playerContainerView: UIView!
+    var playerContainerView: UIView = UIView()
 
     let playerName = "exampleplayer"
 
     // THEOplayer object
-    var player: THEOplayer!
+    var player: THEOplayer = THEOplayer(
+        configuration: THEOplayerConfiguration(
+            pip: nil,
+            license: ProcessInfo.processInfo.theoPlayerLicenseKey
+        )
+    )
 
     // Dictionary of player event listeners
     var listeners: [String: EventListener] = [:]
@@ -33,7 +38,6 @@ class PlayerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        playerContainerView = UIView()
         playerContainerView.translatesAutoresizingMaskIntoConstraints = false
 
         view.addSubview(playerContainerView)
@@ -54,14 +58,6 @@ class PlayerViewController: UIViewController {
             ]
         )
 
-        let playerConfig = THEOplayerConfiguration(
-            pip: nil,
-            license: ProcessInfo.processInfo.theoPlayerLicenseKey
-        )
-
-        self.player = THEOplayer(
-            configuration: playerConfig
-        )
         player.addAsSubview(of: playerContainerView)
 
         let typedSource = TypedSource(
