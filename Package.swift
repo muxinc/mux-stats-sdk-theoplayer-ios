@@ -13,7 +13,7 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/muxinc/stats-sdk-objc.git",
-            exact: "4.5.2"
+            exact: "4.7.0"
         ),
         .package(
             url: "https://github.com/THEOplayer/theoplayer-sdk-ios.git",
