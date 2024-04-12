@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/THEOplayer/theoplayer-sdk-ios.git",
       "state" : {
-        "revision" : "05e5e3c96d6ee99ae6893d7b932e7e3c7c7dfa93",
-        "version" : "5.9.1"
+        "revision" : "cfd6ebe42d9b4e21f0d0393458b95992d65ce9c0",
+        "version" : "6.12.1"
       }
     }
   ],
