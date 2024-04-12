@@ -97,7 +97,7 @@ class PlayerViewController: UIViewController {
             self.player,
             name: playerName,
             customerData: customerData,
-            softwareVersion: "0.8.0"
+            softwareVersion: "0.9.0"
         )
         self.player.play()
     }
