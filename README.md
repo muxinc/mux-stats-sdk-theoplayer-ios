@@ -41,14 +41,14 @@ Then run `pod install`.
 
 ## How to release
 
-* Bump versions in Mux-Stats-THEOplayer.podspec
-* Bump Version in XCode > Target > General
-* Bump versions Constants.swift
-* Execute `update-release-frameworks.sh` to make a full build
-* Github - Create a PR to check in all changed files.
-* If approved, `git tag [YOUR NEW VERSION]` and `git push --tags`
+* Checkout and push a release branch named: `releases/vX.Y.Z` where X, Y, Z are the major, minor, and patch versions of the release
+* Github - open pull requests with release branch as destination for your changes
+* Update version in Mux-Stats-THEOplayer.podspec on release branch
+* Update version in `Constants.swift` on release branch
+* Update version in the Examples and in this README
+* Github - open a pull request to merge release branch to `master`
+* If approved, merge release branch using squash merging 
+* Add `git tag [YOUR NEW VERSION]` and `git push --tags`
 * Github - Make a new release with the new version
 * Cocoapod - Run `pod spec lint` to local check pod validity
 * Cocoapod - Run `pod trunk push Mux-Stats-THEOplayer.podspec`
-* After the `update-release-frameworks.sh` build, run carthage-archive.sh.
-* Then attach the output to the release
