@@ -4,7 +4,7 @@ import PackageDescription
 
 let package = Package(
     name: "Mux-Stats-THEOplayer",
-    platforms: [.iOS(.v11)],
+    platforms: [.iOS(.v12)],
     products: [
         .library(
             name: "MuxStatsTHEOplayer",
