@@ -25,12 +25,13 @@ class BasicPlaybackViewController: UIViewController {
     let playerName = "exampleplayer"
 
     // THEOplayer object
-    var player: THEOplayer = THEOplayer(
-        configuration: THEOplayerConfiguration(
-            pip: nil,
-            license: ProcessInfo.processInfo.theoPlayerLicenseKey
+    var player: THEOplayer = {
+        let builder = THEOplayerConfigurationBuilder()
+        builder.license = ProcessInfo.processInfo.theoPlayerLicenseKey
+        return THEOplayer(
+            configuration: builder.build()
         )
-    )
+    }()
 
     // Dictionary of player event listeners
     var listeners: [String: EventListener] = [:]
@@ -93,7 +94,7 @@ class BasicPlaybackViewController: UIViewController {
             self.player,
             name: playerName,
             customerData: customerData,
-            softwareVersion: "0.9.0"
+            softwareVersion: THEOplayer.version
         )
         self.player.play()
     }
@@ -146,7 +147,12 @@ class BasicPlaybackViewController: UIViewController {
             listener: listeners["error"]!
         )
         listeners.removeAll()
+        player.stop()
 
+        MUXSDKStatsTHEOplayer.destroyPlayer(
+            name: playerName
+        )
+        
         super.viewWillDisappear(animated)
     }
 
