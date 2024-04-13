@@ -51,7 +51,7 @@ class ViewController: UIViewController {
             self.player,
             name: playerName,
             customerData: customerData,
-            softwareVersion: "1.1.1"
+            softwareVersion: THEOplayer.version
         )
         self.player.play()
 
