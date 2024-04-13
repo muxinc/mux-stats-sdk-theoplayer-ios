@@ -16,7 +16,7 @@
 		19C61ECB2A9DEE2500EFCF6F /* MUXSDKStatsTHEOplayerSPMExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C61ECA2A9DEE2500EFCF6F /* MUXSDKStatsTHEOplayerSPMExampleUITests.swift */; };
 		19C61ECD2A9DEE2500EFCF6F /* MUXSDKStatsTHEOplayerSPMExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C61ECC2A9DEE2500EFCF6F /* MUXSDKStatsTHEOplayerSPMExampleUITestsLaunchTests.swift */; };
 		19C61EDD2A9DEEA700EFCF6F /* MuxStatsTHEOplayer in Frameworks */ = {isa = PBXBuildFile; productRef = 19C61EDC2A9DEEA700EFCF6F /* MuxStatsTHEOplayer */; };
-		19C61EDF2A9F8F1700EFCF6F /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C61EDE2A9F8F1700EFCF6F /* PlayerViewController.swift */; };
+		19C61EDF2A9F8F1700EFCF6F /* BasicPlaybackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C61EDE2A9F8F1700EFCF6F /* BasicPlaybackViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +50,7 @@
 		19C61ECA2A9DEE2500EFCF6F /* MUXSDKStatsTHEOplayerSPMExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUXSDKStatsTHEOplayerSPMExampleUITests.swift; sourceTree = "<group>"; };
 		19C61ECC2A9DEE2500EFCF6F /* MUXSDKStatsTHEOplayerSPMExampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUXSDKStatsTHEOplayerSPMExampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		19C61ED92A9DEE8500EFCF6F /* mux-stats-sdk-theoplayer-ios */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "mux-stats-sdk-theoplayer-ios"; path = ../../..; sourceTree = "<group>"; };
-		19C61EDE2A9F8F1700EFCF6F /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		19C61EDE2A9F8F1700EFCF6F /* BasicPlaybackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicPlaybackViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +106,7 @@
 			children = (
 				19C61EA92A9DEE2400EFCF6F /* AppDelegate.swift */,
 				19C61EAB2A9DEE2400EFCF6F /* SceneDelegate.swift */,
-				19C61EDE2A9F8F1700EFCF6F /* PlayerViewController.swift */,
+				19C61EDE2A9F8F1700EFCF6F /* BasicPlaybackViewController.swift */,
 				19C61EAF2A9DEE2400EFCF6F /* Main.storyboard */,
 				19C61EB22A9DEE2500EFCF6F /* Assets.xcassets */,
 				19C61EB42A9DEE2500EFCF6F /* LaunchScreen.storyboard */,
@@ -283,7 +283,7 @@
 			files = (
 				19C61EAA2A9DEE2400EFCF6F /* AppDelegate.swift in Sources */,
 				19C61EAC2A9DEE2400EFCF6F /* SceneDelegate.swift in Sources */,
-				19C61EDF2A9F8F1700EFCF6F /* PlayerViewController.swift in Sources */,
+				19C61EDF2A9F8F1700EFCF6F /* BasicPlaybackViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

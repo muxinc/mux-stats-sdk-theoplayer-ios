@@ -18,14 +18,20 @@ extension ProcessInfo {
     }
 }
 
-class PlayerViewController: UIViewController {
+class BasicPlaybackViewController: UIViewController {
 
-    var playerContainerView: UIView!
+    var playerContainerView: UIView = UIView()
 
     let playerName = "exampleplayer"
 
     // THEOplayer object
-    var player: THEOplayer!
+    var player: THEOplayer = {
+        let builder = THEOplayerConfigurationBuilder()
+        builder.license = ProcessInfo.processInfo.theoPlayerLicenseKey
+        return THEOplayer(
+            configuration: builder.build()
+        )
+    }()
 
     // Dictionary of player event listeners
     var listeners: [String: EventListener] = [:]
@@ -33,7 +39,6 @@ class PlayerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        playerContainerView = UIView()
         playerContainerView.translatesAutoresizingMaskIntoConstraints = false
 
         view.addSubview(playerContainerView)
@@ -54,14 +59,6 @@ class PlayerViewController: UIViewController {
             ]
         )
 
-        let playerConfig = THEOplayerConfiguration(
-            pip: nil,
-            license: ProcessInfo.processInfo.theoPlayerLicenseKey
-        )
-
-        self.player = THEOplayer(
-            configuration: playerConfig
-        )
         player.addAsSubview(of: playerContainerView)
 
         let typedSource = TypedSource(
@@ -69,9 +66,9 @@ class PlayerViewController: UIViewController {
             type: "application/vnd.apple.mpegurl"
         )
 
-        let ad = THEOAdDescription(src: "https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/ad_rule_samples&ciu_szs=300x250&ad_rule=1&impl=s&gdfp_req=1&env=vp&output=vmap&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ar%3Dpremidpostpod&cmsid=496&vid=short_onecue&correlator=")
-
-        let source = SourceDescription(source: typedSource, ads: [ad], textTracks: nil, poster: nil, analytics: nil, metadata: nil)
+        let source = SourceDescription(
+            source: typedSource
+        )
         self.player.source = source
 
         // TODO: Add your property key!
@@ -97,7 +94,7 @@ class PlayerViewController: UIViewController {
             self.player,
             name: playerName,
             customerData: customerData,
-            softwareVersion: "0.8.0"
+            softwareVersion: THEOplayer.version
         )
         self.player.play()
     }
@@ -150,7 +147,12 @@ class PlayerViewController: UIViewController {
             listener: listeners["error"]!
         )
         listeners.removeAll()
+        player.stop()
 
+        MUXSDKStatsTHEOplayer.destroyPlayer(
+            name: playerName
+        )
+        
         super.viewWillDisappear(animated)
     }
 

@@ -4,7 +4,7 @@ import PackageDescription
 
 let package = Package(
     name: "Mux-Stats-THEOplayer",
-    platforms: [.iOS(.v11)],
+    platforms: [.iOS(.v12)],
     products: [
         .library(
             name: "MuxStatsTHEOplayer",
@@ -13,11 +13,11 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/muxinc/stats-sdk-objc.git",
-            exact: "4.5.2"
+            exact: "4.7.0"
         ),
         .package(
             url: "https://github.com/THEOplayer/theoplayer-sdk-ios.git",
-            from: "5.9.1"
+            from: "6.12.1"
         )
     ],
     targets: [
