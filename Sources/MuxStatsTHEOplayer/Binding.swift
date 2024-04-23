@@ -91,24 +91,21 @@ internal class Binding: NSObject {
             event.viewData = self.ad?.viewData
         }
         let name = self.name
-        
-        playerData { (data) in
-            event.playerData = data
-            // careful here, we only want to disable MUXSDKErrorEvent
-            // ad errors should still be triggered (MUXSDKAdErrorEvent)
-            // and we don't want to set the player data code/message for
-            // ad errors either
-            if (type == MUXSDKErrorEvent.self) {
-                if let error = error {
-                    event.playerData!.playerErrorMessage = error
-                    event.playerData!.playerErrorCode = errorCode
-                }
-                if (self.automaticErrorTracking) {
-                    MUXSDKCore.dispatchEvent(event, forPlayer: name)
-                }
-            } else {
+        event.playerData = playerData()
+        // careful here, we only want to disable MUXSDKErrorEvent
+        // ad errors should still be triggered (MUXSDKAdErrorEvent)
+        // and we don't want to set the player data code/message for
+        // ad errors either
+        if (type == MUXSDKErrorEvent.self) {
+            if let error = error {
+                event.playerData?.playerErrorMessage = error
+                event.playerData?.playerErrorCode = errorCode
+            }
+            if (self.automaticErrorTracking) {
                 MUXSDKCore.dispatchEvent(event, forPlayer: name)
             }
+        } else {
+            MUXSDKCore.dispatchEvent(event, forPlayer: name)
         }
     }
 
@@ -120,19 +117,17 @@ internal class Binding: NSObject {
         let event = MUXSDKErrorEvent()
         let name = self.name
 
-        playerData { (data) in
-            event.playerData = data
-            event.playerData!.playerErrorCode = code
-            event.playerData!.playerErrorMessage = message
-            MUXSDKCore.dispatchEvent(event, forPlayer: name)
-        }
+        event.playerData = playerData()
+        event.playerData?.playerErrorCode = code
+        event.playerData?.playerErrorMessage = message
+        MUXSDKCore.dispatchEvent(event, forPlayer: name)
     }
 }
 
 fileprivate extension Binding {
-    func playerData(completion: @escaping (_ data: MUXSDKPlayerData) -> ()) {
+    func playerData() -> MUXSDKPlayerData? {
         let data = MUXSDKPlayerData()
-        guard let player = self.player else { return }
+        guard let player = self.player else { return nil }
 
         data.playerMuxPluginName = Constants.pluginName
         data.playerMuxPluginVersion = Constants.pluginVersion
@@ -145,10 +140,8 @@ fileprivate extension Binding {
         data.playerHeight = player.frame.size.height * UIScreen.main.nativeScale as NSNumber
         data.playerIsFullscreen = player.frame.equalTo(UIScreen.main.bounds) ? "true" : "false"
         data.playerIsPaused = NSNumber(booleanLiteral: player.paused)
-        player.requestCurrentTime { (time, _) in
-            data.playerPlayheadTime = NSNumber(value: (Int64)((time ?? 0) * 1000))
-            completion(data)
-        }
+        data.playerPlayheadTime = NSNumber(value: (Int64)(player.currentTime * 1000))
+        return data
     }
 
     func checkVideoData() {
@@ -191,13 +184,9 @@ fileprivate extension Binding {
 
     func setSizeDimensions () {
         guard let player = player else { return }
-        player.requestVideoWidth { (width, _) in
-            player.requestVideoHeight { (height, _) in
-                let size = CGSize(width: width ?? 0, height: height ?? 0)
-                if !self.size.equalTo(size) {
-                    self.size = size
-                }
-            }
+        let size = CGSize(width: player.videoWidth, height: player.videoHeight)
+        if !self.size.equalTo(size) {
+            self.size = size
         }
     }
 
@@ -247,11 +236,10 @@ fileprivate extension Binding {
                 self.forceSendAdPlaying = true
                 self.dispatchEvent(MUXSDKAdPauseEvent.self, checkVideoData: true, includeAdData: true)
             } else {
-                player.requestCurrentTime(completionHandler: { (time, _) in
-                    if let time = time, let duration = player.duration, time < duration {
-                        self.dispatchEvent(MUXSDKPauseEvent.self, checkVideoData: true)
-                    }
-                })
+                let time = player.currentTime
+                if let duration = player.duration, time < duration {
+                    self.dispatchEvent(MUXSDKPauseEvent.self, checkVideoData: true)
+                }
             }
         }
         timeListener = player.addEventListener(type: PlayerEventTypes.TIME_UPDATE) { (evt: TimeUpdateEvent) in
