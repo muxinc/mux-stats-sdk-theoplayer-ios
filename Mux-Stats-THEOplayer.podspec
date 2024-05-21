@@ -1,7 +1,8 @@
 Pod::Spec.new do |s|
   s.name             = 'Mux-Stats-THEOplayer'
+  s.module_name      = 'MuxStatsTHEOplayer'
 
-  s.version          = '0.9.0'
+  s.version          = '0.10.0'
   s.source           = { :git => 'https://github.com/muxinc/mux-stats-sdk-theoplayer-ios.git',
                          :tag => "v#{s.version}" }
 
