@@ -21,6 +21,6 @@ Pod::Spec.new do |s|
   s.source_files     = 'Sources/**/*.swift'
 
   s.dependency 'Mux-Stats-Core', '~>4.7.1'
-  s.dependency 'THEOplayerSDK-core', '~>7.0.0'
+  s.dependency 'THEOplayerSDK-core', '~>7.0'
 
 end
