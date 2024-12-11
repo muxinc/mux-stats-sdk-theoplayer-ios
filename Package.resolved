@@ -10,12 +10,12 @@
       }
     },
     {
-      "identity" : "theoplayer-sdk-ios",
+      "identity" : "theoplayer-sdk-apple",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/THEOplayer/theoplayer-sdk-ios.git",
+      "location" : "https://github.com/THEOplayer/theoplayer-sdk-apple.git",
       "state" : {
-        "revision" : "5d7dcaada88633aa8859923eba272f88852b0db6",
-        "version" : "7.8.0"
+        "revision" : "4c73f597558f493a11d2faebaef2b4f5a8a916db",
+        "version" : "8.6.2"
       }
     }
   ],
