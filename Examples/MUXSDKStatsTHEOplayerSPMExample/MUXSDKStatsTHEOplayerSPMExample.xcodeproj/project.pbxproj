@@ -3,73 +3,84 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		19C61EAA2A9DEE2400EFCF6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C61EA92A9DEE2400EFCF6F /* AppDelegate.swift */; };
-		19C61EAC2A9DEE2400EFCF6F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C61EAB2A9DEE2400EFCF6F /* SceneDelegate.swift */; };
-		19C61EB12A9DEE2400EFCF6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19C61EAF2A9DEE2400EFCF6F /* Main.storyboard */; };
-		19C61EB32A9DEE2500EFCF6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19C61EB22A9DEE2500EFCF6F /* Assets.xcassets */; };
-		19C61EB62A9DEE2500EFCF6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19C61EB42A9DEE2500EFCF6F /* LaunchScreen.storyboard */; };
-		19C61EC12A9DEE2500EFCF6F /* MUXSDKStatsTHEOplayerSPMExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C61EC02A9DEE2500EFCF6F /* MUXSDKStatsTHEOplayerSPMExampleTests.swift */; };
-		19C61ECB2A9DEE2500EFCF6F /* MUXSDKStatsTHEOplayerSPMExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C61ECA2A9DEE2500EFCF6F /* MUXSDKStatsTHEOplayerSPMExampleUITests.swift */; };
-		19C61ECD2A9DEE2500EFCF6F /* MUXSDKStatsTHEOplayerSPMExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C61ECC2A9DEE2500EFCF6F /* MUXSDKStatsTHEOplayerSPMExampleUITestsLaunchTests.swift */; };
-		19C61EDD2A9DEEA700EFCF6F /* MuxStatsTHEOplayer in Frameworks */ = {isa = PBXBuildFile; productRef = 19C61EDC2A9DEEA700EFCF6F /* MuxStatsTHEOplayer */; };
-		19C61EDF2A9F8F1700EFCF6F /* BasicPlaybackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C61EDE2A9F8F1700EFCF6F /* BasicPlaybackViewController.swift */; };
+		3508D0082DBC43EA00B9AFD2 /* MuxStatsTHEOplayer in Frameworks */ = {isa = PBXBuildFile; productRef = 3508D0072DBC43EA00B9AFD2 /* MuxStatsTHEOplayer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		19C61EBD2A9DEE2500EFCF6F /* PBXContainerItemProxy */ = {
+		3508CFE72DBC403B00B9AFD2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 19C61E9E2A9DEE2400EFCF6F /* Project object */;
+			containerPortal = 3508CFC82DBC403900B9AFD2 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 19C61EA52A9DEE2400EFCF6F;
+			remoteGlobalIDString = 3508CFCF2DBC403900B9AFD2;
 			remoteInfo = MUXSDKStatsTHEOplayerSPMExample;
 		};
-		19C61EC72A9DEE2500EFCF6F /* PBXContainerItemProxy */ = {
+		3508CFF12DBC403B00B9AFD2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 19C61E9E2A9DEE2400EFCF6F /* Project object */;
+			containerPortal = 3508CFC82DBC403900B9AFD2 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 19C61EA52A9DEE2400EFCF6F;
+			remoteGlobalIDString = 3508CFCF2DBC403900B9AFD2;
 			remoteInfo = MUXSDKStatsTHEOplayerSPMExample;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		19C61EA62A9DEE2400EFCF6F /* MUXSDKStatsTHEOplayerSPMExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MUXSDKStatsTHEOplayerSPMExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		19C61EA92A9DEE2400EFCF6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		19C61EAB2A9DEE2400EFCF6F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		19C61EB02A9DEE2400EFCF6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		19C61EB22A9DEE2500EFCF6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		19C61EB52A9DEE2500EFCF6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		19C61EB72A9DEE2500EFCF6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		19C61EBC2A9DEE2500EFCF6F /* MUXSDKStatsTHEOplayerSPMExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MUXSDKStatsTHEOplayerSPMExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		19C61EC02A9DEE2500EFCF6F /* MUXSDKStatsTHEOplayerSPMExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUXSDKStatsTHEOplayerSPMExampleTests.swift; sourceTree = "<group>"; };
-		19C61EC62A9DEE2500EFCF6F /* MUXSDKStatsTHEOplayerSPMExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MUXSDKStatsTHEOplayerSPMExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		19C61ECA2A9DEE2500EFCF6F /* MUXSDKStatsTHEOplayerSPMExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUXSDKStatsTHEOplayerSPMExampleUITests.swift; sourceTree = "<group>"; };
-		19C61ECC2A9DEE2500EFCF6F /* MUXSDKStatsTHEOplayerSPMExampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUXSDKStatsTHEOplayerSPMExampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		19C61ED92A9DEE8500EFCF6F /* mux-stats-sdk-theoplayer-ios */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "mux-stats-sdk-theoplayer-ios"; path = ../../..; sourceTree = "<group>"; };
-		19C61EDE2A9F8F1700EFCF6F /* BasicPlaybackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicPlaybackViewController.swift; sourceTree = "<group>"; };
+		3508CFD02DBC403900B9AFD2 /* MUXSDKStatsTHEOplayerSPMExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MUXSDKStatsTHEOplayerSPMExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3508CFE62DBC403B00B9AFD2 /* MUXSDKStatsTHEOplayerSPMExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MUXSDKStatsTHEOplayerSPMExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3508CFF02DBC403B00B9AFD2 /* MUXSDKStatsTHEOplayerSPMExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MUXSDKStatsTHEOplayerSPMExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		3508CFF82DBC403B00B9AFD2 /* Exceptions for "MUXSDKStatsTHEOplayerSPMExample" folder in "MUXSDKStatsTHEOplayerSPMExample" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 3508CFCF2DBC403900B9AFD2 /* MUXSDKStatsTHEOplayerSPMExample */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		3508CFD22DBC403900B9AFD2 /* MUXSDKStatsTHEOplayerSPMExample */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				3508CFF82DBC403B00B9AFD2 /* Exceptions for "MUXSDKStatsTHEOplayerSPMExample" folder in "MUXSDKStatsTHEOplayerSPMExample" target */,
+			);
+			path = MUXSDKStatsTHEOplayerSPMExample;
+			sourceTree = "<group>";
+		};
+		3508CFE92DBC403B00B9AFD2 /* MUXSDKStatsTHEOplayerSPMExampleTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MUXSDKStatsTHEOplayerSPMExampleTests;
+			sourceTree = "<group>";
+		};
+		3508CFF32DBC403B00B9AFD2 /* MUXSDKStatsTHEOplayerSPMExampleUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MUXSDKStatsTHEOplayerSPMExampleUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
-		19C61EA32A9DEE2400EFCF6F /* Frameworks */ = {
+		3508CFCD2DBC403900B9AFD2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19C61EDD2A9DEEA700EFCF6F /* MuxStatsTHEOplayer in Frameworks */,
+				3508D0082DBC43EA00B9AFD2 /* MuxStatsTHEOplayer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		19C61EB92A9DEE2500EFCF6F /* Frameworks */ = {
+		3508CFE32DBC403B00B9AFD2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		19C61EC32A9DEE2500EFCF6F /* Frameworks */ = {
+		3508CFED2DBC403B00B9AFD2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -79,195 +90,161 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		19C61E9D2A9DEE2400EFCF6F = {
+		3508CFC72DBC403900B9AFD2 = {
 			isa = PBXGroup;
 			children = (
-				19C61EDA2A9DEE8E00EFCF6F /* Packages */,
-				19C61EA82A9DEE2400EFCF6F /* MUXSDKStatsTHEOplayerSPMExample */,
-				19C61EBF2A9DEE2500EFCF6F /* MUXSDKStatsTHEOplayerSPMExampleTests */,
-				19C61EC92A9DEE2500EFCF6F /* MUXSDKStatsTHEOplayerSPMExampleUITests */,
-				19C61EA72A9DEE2400EFCF6F /* Products */,
-				19C61EDB2A9DEEA700EFCF6F /* Frameworks */,
+				3508CFD22DBC403900B9AFD2 /* MUXSDKStatsTHEOplayerSPMExample */,
+				3508CFE92DBC403B00B9AFD2 /* MUXSDKStatsTHEOplayerSPMExampleTests */,
+				3508CFF32DBC403B00B9AFD2 /* MUXSDKStatsTHEOplayerSPMExampleUITests */,
+				3508CFD12DBC403900B9AFD2 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		19C61EA72A9DEE2400EFCF6F /* Products */ = {
+		3508CFD12DBC403900B9AFD2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				19C61EA62A9DEE2400EFCF6F /* MUXSDKStatsTHEOplayerSPMExample.app */,
-				19C61EBC2A9DEE2500EFCF6F /* MUXSDKStatsTHEOplayerSPMExampleTests.xctest */,
-				19C61EC62A9DEE2500EFCF6F /* MUXSDKStatsTHEOplayerSPMExampleUITests.xctest */,
+				3508CFD02DBC403900B9AFD2 /* MUXSDKStatsTHEOplayerSPMExample.app */,
+				3508CFE62DBC403B00B9AFD2 /* MUXSDKStatsTHEOplayerSPMExampleTests.xctest */,
+				3508CFF02DBC403B00B9AFD2 /* MUXSDKStatsTHEOplayerSPMExampleUITests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		19C61EA82A9DEE2400EFCF6F /* MUXSDKStatsTHEOplayerSPMExample */ = {
-			isa = PBXGroup;
-			children = (
-				19C61EA92A9DEE2400EFCF6F /* AppDelegate.swift */,
-				19C61EAB2A9DEE2400EFCF6F /* SceneDelegate.swift */,
-				19C61EDE2A9F8F1700EFCF6F /* BasicPlaybackViewController.swift */,
-				19C61EAF2A9DEE2400EFCF6F /* Main.storyboard */,
-				19C61EB22A9DEE2500EFCF6F /* Assets.xcassets */,
-				19C61EB42A9DEE2500EFCF6F /* LaunchScreen.storyboard */,
-				19C61EB72A9DEE2500EFCF6F /* Info.plist */,
-			);
-			path = MUXSDKStatsTHEOplayerSPMExample;
-			sourceTree = "<group>";
-		};
-		19C61EBF2A9DEE2500EFCF6F /* MUXSDKStatsTHEOplayerSPMExampleTests */ = {
-			isa = PBXGroup;
-			children = (
-				19C61EC02A9DEE2500EFCF6F /* MUXSDKStatsTHEOplayerSPMExampleTests.swift */,
-			);
-			path = MUXSDKStatsTHEOplayerSPMExampleTests;
-			sourceTree = "<group>";
-		};
-		19C61EC92A9DEE2500EFCF6F /* MUXSDKStatsTHEOplayerSPMExampleUITests */ = {
-			isa = PBXGroup;
-			children = (
-				19C61ECA2A9DEE2500EFCF6F /* MUXSDKStatsTHEOplayerSPMExampleUITests.swift */,
-				19C61ECC2A9DEE2500EFCF6F /* MUXSDKStatsTHEOplayerSPMExampleUITestsLaunchTests.swift */,
-			);
-			path = MUXSDKStatsTHEOplayerSPMExampleUITests;
-			sourceTree = "<group>";
-		};
-		19C61EDA2A9DEE8E00EFCF6F /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				19C61ED92A9DEE8500EFCF6F /* mux-stats-sdk-theoplayer-ios */,
-			);
-			path = Packages;
-			sourceTree = "<group>";
-		};
-		19C61EDB2A9DEEA700EFCF6F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		19C61EA52A9DEE2400EFCF6F /* MUXSDKStatsTHEOplayerSPMExample */ = {
+		3508CFCF2DBC403900B9AFD2 /* MUXSDKStatsTHEOplayerSPMExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 19C61ED02A9DEE2500EFCF6F /* Build configuration list for PBXNativeTarget "MUXSDKStatsTHEOplayerSPMExample" */;
+			buildConfigurationList = 3508CFF92DBC403B00B9AFD2 /* Build configuration list for PBXNativeTarget "MUXSDKStatsTHEOplayerSPMExample" */;
 			buildPhases = (
-				19C61EA22A9DEE2400EFCF6F /* Sources */,
-				19C61EA32A9DEE2400EFCF6F /* Frameworks */,
-				19C61EA42A9DEE2400EFCF6F /* Resources */,
+				3508CFCC2DBC403900B9AFD2 /* Sources */,
+				3508CFCD2DBC403900B9AFD2 /* Frameworks */,
+				3508CFCE2DBC403900B9AFD2 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				3508CFD22DBC403900B9AFD2 /* MUXSDKStatsTHEOplayerSPMExample */,
 			);
 			name = MUXSDKStatsTHEOplayerSPMExample;
 			packageProductDependencies = (
-				19C61EDC2A9DEEA700EFCF6F /* MuxStatsTHEOplayer */,
+				3508D0072DBC43EA00B9AFD2 /* MuxStatsTHEOplayer */,
 			);
 			productName = MUXSDKStatsTHEOplayerSPMExample;
-			productReference = 19C61EA62A9DEE2400EFCF6F /* MUXSDKStatsTHEOplayerSPMExample.app */;
+			productReference = 3508CFD02DBC403900B9AFD2 /* MUXSDKStatsTHEOplayerSPMExample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		19C61EBB2A9DEE2500EFCF6F /* MUXSDKStatsTHEOplayerSPMExampleTests */ = {
+		3508CFE52DBC403B00B9AFD2 /* MUXSDKStatsTHEOplayerSPMExampleTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 19C61ED32A9DEE2500EFCF6F /* Build configuration list for PBXNativeTarget "MUXSDKStatsTHEOplayerSPMExampleTests" */;
+			buildConfigurationList = 3508CFFE2DBC403B00B9AFD2 /* Build configuration list for PBXNativeTarget "MUXSDKStatsTHEOplayerSPMExampleTests" */;
 			buildPhases = (
-				19C61EB82A9DEE2500EFCF6F /* Sources */,
-				19C61EB92A9DEE2500EFCF6F /* Frameworks */,
-				19C61EBA2A9DEE2500EFCF6F /* Resources */,
+				3508CFE22DBC403B00B9AFD2 /* Sources */,
+				3508CFE32DBC403B00B9AFD2 /* Frameworks */,
+				3508CFE42DBC403B00B9AFD2 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				19C61EBE2A9DEE2500EFCF6F /* PBXTargetDependency */,
+				3508CFE82DBC403B00B9AFD2 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				3508CFE92DBC403B00B9AFD2 /* MUXSDKStatsTHEOplayerSPMExampleTests */,
 			);
 			name = MUXSDKStatsTHEOplayerSPMExampleTests;
+			packageProductDependencies = (
+			);
 			productName = MUXSDKStatsTHEOplayerSPMExampleTests;
-			productReference = 19C61EBC2A9DEE2500EFCF6F /* MUXSDKStatsTHEOplayerSPMExampleTests.xctest */;
+			productReference = 3508CFE62DBC403B00B9AFD2 /* MUXSDKStatsTHEOplayerSPMExampleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		19C61EC52A9DEE2500EFCF6F /* MUXSDKStatsTHEOplayerSPMExampleUITests */ = {
+		3508CFEF2DBC403B00B9AFD2 /* MUXSDKStatsTHEOplayerSPMExampleUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 19C61ED62A9DEE2500EFCF6F /* Build configuration list for PBXNativeTarget "MUXSDKStatsTHEOplayerSPMExampleUITests" */;
+			buildConfigurationList = 3508D0012DBC403B00B9AFD2 /* Build configuration list for PBXNativeTarget "MUXSDKStatsTHEOplayerSPMExampleUITests" */;
 			buildPhases = (
-				19C61EC22A9DEE2500EFCF6F /* Sources */,
-				19C61EC32A9DEE2500EFCF6F /* Frameworks */,
-				19C61EC42A9DEE2500EFCF6F /* Resources */,
+				3508CFEC2DBC403B00B9AFD2 /* Sources */,
+				3508CFED2DBC403B00B9AFD2 /* Frameworks */,
+				3508CFEE2DBC403B00B9AFD2 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				19C61EC82A9DEE2500EFCF6F /* PBXTargetDependency */,
+				3508CFF22DBC403B00B9AFD2 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				3508CFF32DBC403B00B9AFD2 /* MUXSDKStatsTHEOplayerSPMExampleUITests */,
 			);
 			name = MUXSDKStatsTHEOplayerSPMExampleUITests;
+			packageProductDependencies = (
+			);
 			productName = MUXSDKStatsTHEOplayerSPMExampleUITests;
-			productReference = 19C61EC62A9DEE2500EFCF6F /* MUXSDKStatsTHEOplayerSPMExampleUITests.xctest */;
+			productReference = 3508CFF02DBC403B00B9AFD2 /* MUXSDKStatsTHEOplayerSPMExampleUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		19C61E9E2A9DEE2400EFCF6F /* Project object */ = {
+		3508CFC82DBC403900B9AFD2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastSwiftUpdateCheck = 1630;
+				LastUpgradeCheck = 1630;
 				TargetAttributes = {
-					19C61EA52A9DEE2400EFCF6F = {
-						CreatedOnToolsVersion = 14.3.1;
+					3508CFCF2DBC403900B9AFD2 = {
+						CreatedOnToolsVersion = 16.3;
 					};
-					19C61EBB2A9DEE2500EFCF6F = {
-						CreatedOnToolsVersion = 14.3.1;
-						TestTargetID = 19C61EA52A9DEE2400EFCF6F;
+					3508CFE52DBC403B00B9AFD2 = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = 3508CFCF2DBC403900B9AFD2;
 					};
-					19C61EC52A9DEE2500EFCF6F = {
-						CreatedOnToolsVersion = 14.3.1;
-						TestTargetID = 19C61EA52A9DEE2400EFCF6F;
+					3508CFEF2DBC403B00B9AFD2 = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = 3508CFCF2DBC403900B9AFD2;
 					};
 				};
 			};
-			buildConfigurationList = 19C61EA12A9DEE2400EFCF6F /* Build configuration list for PBXProject "MUXSDKStatsTHEOplayerSPMExample" */;
-			compatibilityVersion = "Xcode 14.0";
+			buildConfigurationList = 3508CFCB2DBC403900B9AFD2 /* Build configuration list for PBXProject "MUXSDKStatsTHEOplayerSPMExample" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 19C61E9D2A9DEE2400EFCF6F;
-			productRefGroup = 19C61EA72A9DEE2400EFCF6F /* Products */;
+			mainGroup = 3508CFC72DBC403900B9AFD2;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				3508D0062DBC43EA00B9AFD2 /* XCLocalSwiftPackageReference "../../../mux-stats-sdk-theoplayer-ios" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 3508CFD12DBC403900B9AFD2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				19C61EA52A9DEE2400EFCF6F /* MUXSDKStatsTHEOplayerSPMExample */,
-				19C61EBB2A9DEE2500EFCF6F /* MUXSDKStatsTHEOplayerSPMExampleTests */,
-				19C61EC52A9DEE2500EFCF6F /* MUXSDKStatsTHEOplayerSPMExampleUITests */,
+				3508CFCF2DBC403900B9AFD2 /* MUXSDKStatsTHEOplayerSPMExample */,
+				3508CFE52DBC403B00B9AFD2 /* MUXSDKStatsTHEOplayerSPMExampleTests */,
+				3508CFEF2DBC403B00B9AFD2 /* MUXSDKStatsTHEOplayerSPMExampleUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		19C61EA42A9DEE2400EFCF6F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				19C61EB62A9DEE2500EFCF6F /* LaunchScreen.storyboard in Resources */,
-				19C61EB32A9DEE2500EFCF6F /* Assets.xcassets in Resources */,
-				19C61EB12A9DEE2400EFCF6F /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		19C61EBA2A9DEE2500EFCF6F /* Resources */ = {
+		3508CFCE2DBC403900B9AFD2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		19C61EC42A9DEE2500EFCF6F /* Resources */ = {
+		3508CFE42DBC403B00B9AFD2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3508CFEE2DBC403B00B9AFD2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -277,72 +254,104 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		19C61EA22A9DEE2400EFCF6F /* Sources */ = {
+		3508CFCC2DBC403900B9AFD2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19C61EAA2A9DEE2400EFCF6F /* AppDelegate.swift in Sources */,
-				19C61EAC2A9DEE2400EFCF6F /* SceneDelegate.swift in Sources */,
-				19C61EDF2A9F8F1700EFCF6F /* BasicPlaybackViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		19C61EB82A9DEE2500EFCF6F /* Sources */ = {
+		3508CFE22DBC403B00B9AFD2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19C61EC12A9DEE2500EFCF6F /* MUXSDKStatsTHEOplayerSPMExampleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		19C61EC22A9DEE2500EFCF6F /* Sources */ = {
+		3508CFEC2DBC403B00B9AFD2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19C61ECB2A9DEE2500EFCF6F /* MUXSDKStatsTHEOplayerSPMExampleUITests.swift in Sources */,
-				19C61ECD2A9DEE2500EFCF6F /* MUXSDKStatsTHEOplayerSPMExampleUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		19C61EBE2A9DEE2500EFCF6F /* PBXTargetDependency */ = {
+		3508CFE82DBC403B00B9AFD2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 19C61EA52A9DEE2400EFCF6F /* MUXSDKStatsTHEOplayerSPMExample */;
-			targetProxy = 19C61EBD2A9DEE2500EFCF6F /* PBXContainerItemProxy */;
+			target = 3508CFCF2DBC403900B9AFD2 /* MUXSDKStatsTHEOplayerSPMExample */;
+			targetProxy = 3508CFE72DBC403B00B9AFD2 /* PBXContainerItemProxy */;
 		};
-		19C61EC82A9DEE2500EFCF6F /* PBXTargetDependency */ = {
+		3508CFF22DBC403B00B9AFD2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 19C61EA52A9DEE2400EFCF6F /* MUXSDKStatsTHEOplayerSPMExample */;
-			targetProxy = 19C61EC72A9DEE2500EFCF6F /* PBXContainerItemProxy */;
+			target = 3508CFCF2DBC403900B9AFD2 /* MUXSDKStatsTHEOplayerSPMExample */;
+			targetProxy = 3508CFF12DBC403B00B9AFD2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		19C61EAF2A9DEE2400EFCF6F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				19C61EB02A9DEE2400EFCF6F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		19C61EB42A9DEE2500EFCF6F /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				19C61EB52A9DEE2500EFCF6F /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		19C61ECE2A9DEE2500EFCF6F /* Debug */ = {
+		3508CFFA2DBC403B00B9AFD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XX95P4Y787;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MUXSDKStatsTHEOplayerSPMExample/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mux.data.MUXSDKStatsTHEOplayerSPMExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3508CFFB2DBC403B00B9AFD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XX95P4Y787;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MUXSDKStatsTHEOplayerSPMExample/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mux.data.MUXSDKStatsTHEOplayerSPMExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3508CFFC2DBC403B00B9AFD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -373,9 +382,11 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = XX95P4Y787;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -389,20 +400,22 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		19C61ECF2A9DEE2500EFCF6F /* Release */ = {
+		3508CFFD2DBC403B00B9AFD2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -433,9 +446,11 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = XX95P4Y787;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -443,86 +458,27 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		19C61ED12A9DEE2500EFCF6F /* Debug */ = {
+		3508CFFF2DBC403B00B9AFD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = XX95P4Y787;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MUXSDKStatsTHEOplayerSPMExample/Info.plist;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mux.THEOplayer.example.MUXSDKStatsTHEOplayerSPMExample;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		19C61ED22A9DEE2500EFCF6F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = XX95P4Y787;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MUXSDKStatsTHEOplayerSPMExample/Info.plist;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mux.THEOplayer.example.MUXSDKStatsTHEOplayerSPMExample;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		19C61ED42A9DEE2500EFCF6F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XX95P4Y787;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mux.THEOplayer.example.MUXSDKStatsTHEOplayerSPMExampleTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mux.data.MUXSDKStatsTHEOplayerSPMExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -531,18 +487,17 @@
 			};
 			name = Debug;
 		};
-		19C61ED52A9DEE2500EFCF6F /* Release */ = {
+		3508D0002DBC403B00B9AFD2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XX95P4Y787;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mux.THEOplayer.example.MUXSDKStatsTHEOplayerSPMExampleTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mux.data.MUXSDKStatsTHEOplayerSPMExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -551,16 +506,15 @@
 			};
 			name = Release;
 		};
-		19C61ED72A9DEE2500EFCF6F /* Debug */ = {
+		3508D0022DBC403B00B9AFD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XX95P4Y787;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mux.THEOplayer.example.MUXSDKStatsTHEOplayerSPMExampleUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mux.data.MUXSDKStatsTHEOplayerSPMExampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -569,16 +523,15 @@
 			};
 			name = Debug;
 		};
-		19C61ED82A9DEE2500EFCF6F /* Release */ = {
+		3508D0032DBC403B00B9AFD2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XX95P4Y787;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mux.THEOplayer.example.MUXSDKStatsTHEOplayerSPMExampleUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mux.data.MUXSDKStatsTHEOplayerSPMExampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -590,50 +543,57 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		19C61EA12A9DEE2400EFCF6F /* Build configuration list for PBXProject "MUXSDKStatsTHEOplayerSPMExample" */ = {
+		3508CFCB2DBC403900B9AFD2 /* Build configuration list for PBXProject "MUXSDKStatsTHEOplayerSPMExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				19C61ECE2A9DEE2500EFCF6F /* Debug */,
-				19C61ECF2A9DEE2500EFCF6F /* Release */,
+				3508CFFC2DBC403B00B9AFD2 /* Debug */,
+				3508CFFD2DBC403B00B9AFD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		19C61ED02A9DEE2500EFCF6F /* Build configuration list for PBXNativeTarget "MUXSDKStatsTHEOplayerSPMExample" */ = {
+		3508CFF92DBC403B00B9AFD2 /* Build configuration list for PBXNativeTarget "MUXSDKStatsTHEOplayerSPMExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				19C61ED12A9DEE2500EFCF6F /* Debug */,
-				19C61ED22A9DEE2500EFCF6F /* Release */,
+				3508CFFA2DBC403B00B9AFD2 /* Debug */,
+				3508CFFB2DBC403B00B9AFD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		19C61ED32A9DEE2500EFCF6F /* Build configuration list for PBXNativeTarget "MUXSDKStatsTHEOplayerSPMExampleTests" */ = {
+		3508CFFE2DBC403B00B9AFD2 /* Build configuration list for PBXNativeTarget "MUXSDKStatsTHEOplayerSPMExampleTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				19C61ED42A9DEE2500EFCF6F /* Debug */,
-				19C61ED52A9DEE2500EFCF6F /* Release */,
+				3508CFFF2DBC403B00B9AFD2 /* Debug */,
+				3508D0002DBC403B00B9AFD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		19C61ED62A9DEE2500EFCF6F /* Build configuration list for PBXNativeTarget "MUXSDKStatsTHEOplayerSPMExampleUITests" */ = {
+		3508D0012DBC403B00B9AFD2 /* Build configuration list for PBXNativeTarget "MUXSDKStatsTHEOplayerSPMExampleUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				19C61ED72A9DEE2500EFCF6F /* Debug */,
-				19C61ED82A9DEE2500EFCF6F /* Release */,
+				3508D0022DBC403B00B9AFD2 /* Debug */,
+				3508D0032DBC403B00B9AFD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		3508D0062DBC43EA00B9AFD2 /* XCLocalSwiftPackageReference "../../../mux-stats-sdk-theoplayer-ios" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../../mux-stats-sdk-theoplayer-ios";
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
-		19C61EDC2A9DEEA700EFCF6F /* MuxStatsTHEOplayer */ = {
+		3508D0072DBC43EA00B9AFD2 /* MuxStatsTHEOplayer */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MuxStatsTHEOplayer;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 19C61E9E2A9DEE2400EFCF6F /* Project object */;
+	rootObject = 3508CFC82DBC403900B9AFD2 /* Project object */;
 }

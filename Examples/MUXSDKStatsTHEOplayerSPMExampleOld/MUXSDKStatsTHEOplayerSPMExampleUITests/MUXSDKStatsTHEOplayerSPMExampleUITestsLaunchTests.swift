@@ -2,8 +2,6 @@
 //  MUXSDKStatsTHEOplayerSPMExampleUITestsLaunchTests.swift
 //  MUXSDKStatsTHEOplayerSPMExampleUITests
 //
-//  Created by Emily Dixon on 4/25/25.
-//
 
 import XCTest
 
@@ -17,7 +15,6 @@ final class MUXSDKStatsTHEOplayerSPMExampleUITestsLaunchTests: XCTestCase {
         continueAfterFailure = false
     }
 
-    @MainActor
     func testLaunch() throws {
         let app = XCUIApplication()
         app.launch()
