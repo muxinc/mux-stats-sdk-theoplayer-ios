@@ -5,8 +5,8 @@ import PackageDescription
 let package = Package(
     name: "Mux-Stats-THEOplayer",
     platforms: [
-        .iOS(.v12),
-        .tvOS(.v12)
+        .iOS(.v13),
+        .tvOS(.v13)
     ],
     products: [
         .library(
@@ -20,8 +20,8 @@ let package = Package(
             exact: "4.7.1"
         ),
         .package(
-            url: "https://github.com/THEOplayer/theoplayer-sdk-ios.git",
-            .upToNextMajor(from: "8.0.0")
+            url: "https://github.com/THEOplayer/theoplayer-sdk-apple.git",
+            .upToNextMajor(from: "9.0.0")
         )
     ],
     targets: [
@@ -34,7 +34,7 @@ let package = Package(
                 ),
                 .product(
                     name: "THEOplayerSDK",
-                    package: "theoplayer-sdk-ios"
+                    package: "theoplayer-sdk-apple"
                 ),
             ]
         ),
@@ -48,7 +48,7 @@ let package = Package(
                 ),
                 .product(
                     name: "THEOplayerSDK",
-                    package: "theoplayer-sdk-ios"
+                    package: "theoplayer-sdk-apple"
                 ),
             ]
         ),
