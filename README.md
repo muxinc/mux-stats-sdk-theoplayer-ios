@@ -25,7 +25,7 @@ Add the following to your `Package.swift` dependencies
 ```swift
 .package(
       url: "https://github.com/muxinc/mux-stats-sdk-theoplayer-ios",
-      .upToNextMajor(from: "0.10.0")
+      .upToNextMajor(from: "0.13.0")
     ),
 ```
 
@@ -34,7 +34,7 @@ Add the following to your `Package.swift` dependencies
 Add this to your Podfile:
 
 ```
-pod 'Mux-Stats-THEOplayer', '~> 0.10'
+pod 'Mux-Stats-THEOplayer', '~> 0.13'
 ```
 
 Then run `pod install`.
@@ -52,3 +52,4 @@ Then run `pod install`.
 * Github - Make a new release with the new version
 * Cocoapod - Run `pod spec lint` to local check pod validity
 * Cocoapod - Run `pod trunk push Mux-Stats-THEOplayer.podspec`
+

@@ -5,17 +5,17 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/muxinc/stats-sdk-objc.git",
       "state" : {
-        "revision" : "d72b1d40ae9f568d2c6be890c48a17b1ff11c9af",
-        "version" : "4.7.1"
+        "revision" : "1d2c51af433eadb5f904904554422d7bc476c167",
+        "version" : "5.4.0"
       }
     },
     {
-      "identity" : "theoplayer-sdk-ios",
+      "identity" : "theoplayer-sdk-apple",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/THEOplayer/theoplayer-sdk-ios.git",
+      "location" : "https://github.com/THEOplayer/theoplayer-sdk-apple.git",
       "state" : {
-        "revision" : "5d7dcaada88633aa8859923eba272f88852b0db6",
-        "version" : "7.8.0"
+        "revision" : "585d6d89db438bf516a4d0bebf5b7b1bf9aefcbe",
+        "version" : "9.0.0"
       }
     }
   ],

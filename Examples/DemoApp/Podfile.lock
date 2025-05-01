@@ -1,9 +1,9 @@
 PODS:
-  - Mux-Stats-Core (4.7.1)
+  - Mux-Stats-Core (5.4.0)
   - Mux-Stats-THEOplayer (0.12.0):
-    - Mux-Stats-Core (~> 4.7.1)
-    - THEOplayerSDK-core (~> 8.0)
-  - THEOplayerSDK-core (8.2.2)
+    - Mux-Stats-Core (~> 5.4.0)
+    - THEOplayerSDK-core (~> 9.0)
+  - THEOplayerSDK-core (9.2.0)
 
 DEPENDENCIES:
   - Mux-Stats-THEOplayer (from `../..`)
@@ -18,9 +18,9 @@ EXTERNAL SOURCES:
     :path: "../.."
 
 SPEC CHECKSUMS:
-  Mux-Stats-Core: b3b61726282ee28e84656734469636ea42787581
-  Mux-Stats-THEOplayer: 29ffcc5bd808eb07d3c5ba584535b25f4033cc9f
-  THEOplayerSDK-core: 46f95f30a83fa01a67492ebfa130b1692505d594
+  Mux-Stats-Core: 9ae80f0e927076488f3a09a4cd35ca8d41526200
+  Mux-Stats-THEOplayer: 36b7fdf3314dd69f94efa6e62e0c0eac68d9d142
+  THEOplayerSDK-core: 7e94ff8c486d8ed2748e696cba25e885083947a8
 
 PODFILE CHECKSUM: a32ea9672a6cdcc75164b655ba3305c0cccc1ced
 
