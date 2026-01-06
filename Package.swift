@@ -21,7 +21,7 @@ let package = Package(
         ),
         .package(
             url: "https://github.com/THEOplayer/theoplayer-sdk-apple.git",
-            .upToNextMajor(from: "9.0.0")
+            .upToNextMajor(from: "10.0.0")
         )
     ],
     targets: [
