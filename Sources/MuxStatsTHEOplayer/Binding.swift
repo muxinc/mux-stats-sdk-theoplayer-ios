@@ -140,7 +140,9 @@ fileprivate extension Binding {
         data.playerHeight = player.frame.size.height * UIScreen.main.nativeScale as NSNumber
         data.playerIsFullscreen = player.frame.equalTo(UIScreen.main.bounds) ? "true" : "false"
         data.playerIsPaused = NSNumber(booleanLiteral: player.paused)
-        data.playerPlayheadTime = NSNumber(value: (Int64)(player.currentTime * 1000))
+        if player.currentTime.isFinite {
+            data.playerPlayheadTime = NSNumber(value: (Int64)(player.currentTime * 1000))
+        }
         return data
     }
 
