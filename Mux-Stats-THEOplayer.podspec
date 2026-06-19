@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.license          = 'Apache 2.0'
   s.author           = { 'Mux' => 'ios-sdk@mux.com' }
 
-  s.ios.deployment_target   = '13.0'
+  s.ios.deployment_target   = '15.0'
   s.swift_versions   = ['5.0']
 
   s.source_files     = 'Sources/**/*.swift'
