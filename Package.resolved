@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/muxinc/stats-sdk-objc.git",
       "state" : {
-        "revision" : "36fc59da21644e328c143a05f50510f575feec45",
-        "version" : "5.7.1"
+        "revision" : "720206a95a1206cf7ec0d2e4cb12d4989c9fa740",
+        "version" : "5.13.0"
       }
     },
     {
@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/THEOplayer/theoplayer-sdk-apple.git",
       "state" : {
-        "revision" : "e9a587d2a499d225efce843a76c36770343cfbbc",
-        "version" : "10.7.0"
+        "revision" : "565e587837e70098c27afb123e24f5833eaf5c42",
+        "version" : "11.5.0"
       }
     }
   ],
